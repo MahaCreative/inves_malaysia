@@ -226,7 +226,7 @@ Nama Bank: ${data.nama_bank}`;
                     property="og:description"
                     content="Daftar menjadi member PT Dherva Investindo. Isi formulir pendaftaran dan mulai investasi Anda."
                 />
-                <meta property="og:image" content="/image/PT-DHERVA-INVESTINDO-14-1-20258.png" />
+                <meta property="og:image" content="/image/LOGO PNG.png" />
                 <meta property="og:type" content="website" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Pendaftaran Member - PT Dherva Investindo" />
@@ -234,7 +234,7 @@ Nama Bank: ${data.nama_bank}`;
                     name="twitter:description"
                     content="Daftar menjadi member PT Dherva Investindo. Isi formulir pendaftaran dan mulai investasi Anda."
                 />
-                <meta name="twitter:image" content="/image/PT-DHERVA-INVESTINDO-14-1-20258.png" />
+                <meta name="twitter:image" content="/image/LOGO PNG.png" />
             </Head>
 
             <div className="flex min-h-screen justify-center bg-gray-50 py-12">

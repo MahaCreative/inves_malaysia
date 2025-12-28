@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title inertia>{{ config('app.name', 'Laravel') }}</title>
+    <title inertia>{{ config('app.name', 'PT. Dherva Investindo') }}</title>
 
     {{-- Default SEO metas (can be overridden by page via Inertia Head) --}}
     <meta name="description" content="{{ $page['props']['seo']['description'] ?? config('app.description', '') }}">
@@ -15,7 +15,7 @@
     {{-- Open Graph / Facebook --}}
     <meta property="og:title" content="{{ $page['props']['seo']['title'] ?? config('app.name') }}" />
     <meta property="og:description" content="{{ $page['props']['seo']['description'] ?? config('app.description', '') }}" />
-    <meta property="og:image" content="{{ $page['props']['seo']['image'] ?? asset('image/PT-DHERVA-INVESTINDO-14-1-20258.png') }}" />
+    <meta property="og:image" content="{{ $page['props']['seo']['image'] ?? asset('image/LOGO PNG.png') }}" />
     <meta property="og:type" content="{{ $page['props']['seo']['type'] ?? 'website' }}" />
     <meta property="og:url" content="{{ $page['props']['seo']['canonical'] ?? url()->current() }}" />
 
@@ -23,7 +23,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ $page['props']['seo']['title'] ?? config('app.name') }}" />
     <meta name="twitter:description" content="{{ $page['props']['seo']['description'] ?? config('app.description', '') }}" />
-    <meta name="twitter:image" content="{{ $page['props']['seo']['image'] ?? asset('image/PT-DHERVA-INVESTINDO-14-1-20258.png') }}" />
+    <meta name="twitter:image" content="{{ $page['props']['seo']['image'] ?? asset('image/LOGO PNG.png') }}" />
 
     <link rel="icon" href="image/favicon.ico" sizes="any">
 

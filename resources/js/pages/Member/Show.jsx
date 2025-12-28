@@ -33,12 +33,12 @@ export default function Show({ member, whatsApp }) {
                 <meta name="robots" content="noindex,nofollow" />
                 <meta property="og:title" content={`Detail Member - ${member.nama_member || ''} - PT Dherva Investindo`} />
                 <meta property="og:description" content={`Lihat jadwal pencairan dan riwayat transaksi untuk member ${member.nama_member || ''}.`} />
-                <meta property="og:image" content="/image/PT-DHERVA-INVESTINDO-14-1-20258.png" />
+                <meta property="og:image" content="/image/LOGO PNG.png" />
                 <meta property="og:type" content="website" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={`Detail Member - ${member.nama_member || ''} - PT Dherva Investindo`} />
                 <meta name="twitter:description" content={`Lihat jadwal pencairan dan riwayat transaksi untuk member ${member.nama_member || ''}.`} />
-                <meta name="twitter:image" content="/image/PT-DHERVA-INVESTINDO-14-1-20258.png" />
+                <meta name="twitter:image" content="/image/LOGO PNG.png" />
             </Head>
 
             <div className="flex w-full flex-col items-center justify-center rounded-md bg-white px-4 py-3">

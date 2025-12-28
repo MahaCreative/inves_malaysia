@@ -5,7 +5,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot } from 'react-dom/client';
 import { Ziggy } from './ziggy';
 import { route } from '../../vendor/tightenco/ziggy';
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const appName = import.meta.env.VITE_APP_NAME || 'PT. Dherva Investindo';
 
 createInertiaApp({
     title: (title) => title ? `${title}` : appName,

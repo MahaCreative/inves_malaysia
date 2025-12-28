@@ -71,12 +71,12 @@ export default function Member() {
                 <meta name="robots" content="noindex,nofollow" />
                 <meta property="og:title" content="Member Area - PT Dherva Investindo" />
                 <meta property="og:description" content="Akses data transaksi dan pencairan member PT Dherva Investindo." />
-                <meta property="og:image" content="/image/PT-DHERVA-INVESTINDO-14-1-20258.png" />
+                <meta property="og:image" content="/image/LOGO PNG.png" />
                 <meta property="og:type" content="website" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Member Area - PT Dherva Investindo" />
                 <meta name="twitter:description" content="Akses data transaksi dan pencairan member PT Dherva Investindo." />
-                <meta name="twitter:image" content="/image/PT-DHERVA-INVESTINDO-14-1-20258.png" />
+                <meta name="twitter:image" content="/image/LOGO PNG.png" />
             </Head>
 
             <div className="flex flex-col items-center justify-center gap-y-6 bg-white px-4 py-3 text-2xl">

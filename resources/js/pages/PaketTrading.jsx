@@ -112,12 +112,15 @@ export default function PaketTrading() {
                 <meta name="robots" content="index,follow" />
                 <meta property="og:title" content="Paket Trading - PT Dherva Investindo" />
                 <meta property="og:description" content="Pilih paket trading yang sesuai: Paket A, B, C, D. Simulasi profit dan rincian pencairan." />
-                <meta property="og:image" content="/image/PT-DHERVA-INVESTINDO-14-1-20258.png" />
+                <meta property="og:image" content="/image/LOGO PNG.png" />
                 <meta property="og:type" content="website" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Paket Trading - PT Dherva Investindo" />
-                <meta name="twitter:description" content="Pilih paket trading yang sesuai: Paket A, B, C, D. Simulasi profit dan rincian pencairan." />
-                <meta name="twitter:image" content="/image/PT-DHERVA-INVESTINDO-14-1-20258.png" />
+                <meta
+                    name="twitter:description"
+                    content="Pilih paket trading yang sesuai: Paket A, B, C, D. Simulasi profit dan rincian pencairan."
+                />
+                <meta name="twitter:image" content="/image/LOGO PNG.png" />
             </Head>
 
             <div className="space-y-8">

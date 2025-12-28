@@ -22,7 +22,7 @@ export default function Home() {
                 <meta name="robots" content="index,follow" />
                 <meta property="og:title" content="PT Dherva Investindo - Investasi Cerdas" />
                 <meta property="og:description" content="Platform investasi terpercaya, profit bertahap, aman dan diawasi OJK." />
-                <meta property="og:image" content="/image/PT-DHERVA-INVESTINDO-14-1-20258.png" />
+                <meta property="og:image" content="/image/LOGO PNG.png" />
             </Head>
 
             <div className="space-y-12">
