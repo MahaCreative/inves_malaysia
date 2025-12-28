@@ -2,11 +2,20 @@ import { Head, router } from '@inertiajs/react';
 import Swal from 'sweetalert2';
 import Layout from '../../Layout';
 import { formatRupiah } from '../FormatRupiah';
-export default function Show({ member }) {
+export default function Show({ member, whatsApp }) {
     console.log(member);
     const penarikanSaldo = () => {
         if (member.profit[member.profit.length - 1]?.total_profit > 0) {
             router.post(`/penarikan-saldo/${member.id_member}`);
+            const whatsappMessage = `Halo, Admin saya ingin melakukan penarikan saldo, Harap untuk proses Penarikan Saldo saya segera di proses.
+`;
+
+            // Nomor WhatsApp Admin (ubah sesuai nomor yang benar)
+            const adminPhone = whatsApp.whatsapp;
+            const whatsappUrl = `https://wa.me/${adminPhone}?text=${encodeURIComponent(whatsappMessage)}`;
+
+            // Kirim ke WhatsApp
+            window.open(whatsappUrl, '_blank');
         } else {
             Swal.fire({
                 icon: 'error',

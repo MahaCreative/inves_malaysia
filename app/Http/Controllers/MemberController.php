@@ -22,9 +22,9 @@ class MemberController extends Controller
 
     public function show(Request $request, $id_member)
     {
+        $whatsApp = WhatsAppSetting::first();
         $member = Member::with('profit')->where('id_member', $id_member)->first();
-        return inertia('Member/Show', compact('member'));
-        dd($member);
+        return inertia('Member/Show', compact('member', 'whatsApp'));
     }
 
     public function penarikan_saldo(Request $request, $id_member)

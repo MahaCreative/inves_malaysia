@@ -21,7 +21,8 @@ class PendaftaranController extends Controller
     }
     public function index()
     {
-        return inertia('Pendaftaran');
+        $whatsApp = WhatsAppSetting::first();
+        return inertia('Pendaftaran', compact('whatsApp'));
     }
 
     public function store(Request $request)

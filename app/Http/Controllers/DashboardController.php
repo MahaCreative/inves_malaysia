@@ -20,6 +20,7 @@ class DashboardController extends Controller
     {
 
         $profit = Profit::find($request->profit_id);
+
         $masukJam = Carbon::parse($request->modal_trading_masuk_jam);
 
         // Hitung tahap jam

@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class WhatsAppSetting extends Model
 {
-    //
+    protected $guarded = [];
 }

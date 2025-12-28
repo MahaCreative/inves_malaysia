@@ -18,7 +18,10 @@ const stepAnim = {
     exit: { opacity: 0, x: -40 }
 };
 
-export default function Pendaftaran() {
+/* ================= HELPER ================= */
+const onlyNumbers = (value) => value.replace(/[^0-9]/g, '');
+
+export default function Pendaftaran({ whatsApp }) {
     const { data, setData, post, reset, errors, processing } = useForm({
         nama_member: '',
         nik: '',
@@ -136,6 +139,41 @@ export default function Pendaftaran() {
     const submitHandler = (e) => {
         e.preventDefault();
 
+        // Buat pesan WhatsApp
+        const whatsappMessage = `Halo, saya ingin mendaftar sebagai member PT Dherva Investindo dengan data lengkap berikut:
+
+*DATA PRIBADI*
+Nama: ${data.nama_member}
+NIK: ${data.nik}
+Email: ${data.email}
+No WhatsApp: ${data.no_telp}
+Jenis Kelamin: ${data.jenis_kelamin}
+Tempat Lahir: ${data.tempat_lahir}
+Tanggal Lahir: ${data.tanggal_lahir}
+
+*ALAMAT*
+Provinsi: ${data.provinsi}
+Kota: ${data.kota}
+Alamat Lengkap: ${data.alamat_lengkap}
+Kode Pos: ${data.kode_pos}
+
+*PEKERJAAN & DANA*
+Pekerjaan: ${data.pekerjaan}
+Sumber Dana: ${data.sumber_dana}
+
+*REKENING BANK*
+Nama Pemilik: ${data.nama_rekening}
+Nomor Rekening: ${data.nomor_rekening}
+Nama Bank: ${data.nama_bank}`;
+
+        // Nomor WhatsApp Admin (ubah sesuai nomor yang benar)
+        const adminPhone = whatsApp.whatsapp;
+        const whatsappUrl = `https://wa.me/${adminPhone}?text=${encodeURIComponent(whatsappMessage)}`;
+
+        // Kirim ke WhatsApp
+        window.open(whatsappUrl, '_blank');
+
+        // Tampilkan loading
         Swal.fire({
             title: 'Mengirim Data',
             text: 'Mohon tunggu...',
@@ -144,6 +182,7 @@ export default function Pendaftaran() {
             didOpen: () => Swal.showLoading()
         });
 
+        // Kirim data ke server
         post('/pendaftaran-member', {
             preserveScroll: true,
             preserveState: true,
@@ -151,7 +190,7 @@ export default function Pendaftaran() {
                 Swal.fire({
                     icon: 'success',
                     title: 'Berhasil 🎉',
-                    text: 'Pendaftaran member berhasil. Silahkan menunggu konfirmasi dari admin untuk proses lebih lanjut',
+                    text: 'Pendaftaran member berhasil. Pesan telah dikirim ke WhatsApp admin. Silahkan menunggu konfirmasi dari admin untuk proses lebih lanjut',
                     confirmButtonColor: '#2563eb'
                 });
                 reset();
@@ -231,32 +270,35 @@ export default function Pendaftaran() {
                                                 onChange={(e) => setData('nama_member', e.target.value)}
                                             />
                                             <Input
-                                                errors={errors.nik}
+                                                type="number"
+                                                error={errors.nik}
                                                 label="NIK"
                                                 value={data.nik}
                                                 onChange={(e) => setData('nik', e.target.value)}
                                             />
                                             <Input
-                                                errors={errors.email}
+                                                error={errors.email}
                                                 label="Email"
                                                 type="email"
                                                 value={data.email}
                                                 onChange={(e) => setData('email', e.target.value)}
                                             />
                                             <Input
-                                                errors={errors.no_telp}
+                                                type="number"
+                                                min="10000000000"
+                                                error={errors.no_telp}
                                                 label="No WhatsApp"
                                                 value={data.no_telp}
                                                 onChange={(e) => setData('no_telp', e.target.value)}
                                             />
                                             <Input
-                                                errors={errors.tempat_lahir}
+                                                error={errors.tempat_lahir}
                                                 label="Tempat Lahir"
                                                 value={data.tempat_lahir}
                                                 onChange={(e) => setData('tempat_lahir', e.target.value)}
                                             />
                                             <Input
-                                                errors={errors.tanggal_lahir}
+                                                error={errors.tanggal_lahir}
                                                 label="Tanggal Lahir"
                                                 type="date"
                                                 value={data.tanggal_lahir}
@@ -337,11 +379,13 @@ export default function Pendaftaran() {
                                         <Input
                                             label="Alamat Lengkap"
                                             value={data.alamat_lengkap}
-                                            errors={errors.alamat_lengkap}
+                                            error={errors.alamat_lengkap}
                                             onChange={(e) => setData('alamat_lengkap', e.target.value)}
                                         />
                                         <Input
-                                            errors={errors.kode_pos}
+                                            type="number"
+                                            min="10000"
+                                            error={errors.kode_pos}
                                             label="Kode Pos"
                                             value={data.kode_pos}
                                             onChange={(e) => setData('kode_pos', e.target.value)}
@@ -410,6 +454,8 @@ export default function Pendaftaran() {
                                             onChange={(e) => setData('nama_rekening', e.target.value)}
                                         />
                                         <Input
+                                            type="number"
+                                            min="100000"
                                             error={errors.nomor_rekening}
                                             label="Nomor Rekening"
                                             value={data.nomor_rekening}

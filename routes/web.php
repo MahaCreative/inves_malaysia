@@ -31,6 +31,8 @@ Route::get('profil', [ProfilController::class, 'index'])->name('profil');
 Route::get('dasar-prinsip', [DasarPrinsipController::class, 'index'])->name('dasar-prinsip');
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('/proses-deposit', [DashboardController::class, 'store'])->name('proses-deposist');
+    Route::post('/done-deposit', [DashboardController::class, 'done'])->name('done-deposit');
     Route::get('/setting-wa', [SettingWA::class, 'index'])->name('setting-wa');
-    Route::post('/setting-wa', [SettingWA::class, 'store'])->name('setting-wa.store');
+    Route::post('/update-whatsapp', [SettingWA::class, 'store'])->name('setting-wa.store');
 });

@@ -1,5 +1,6 @@
 import { useForm, usePage } from '@inertiajs/react';
 import { useState } from 'react';
+import Swal from 'sweetalert2';
 import Button from '../components/Button';
 import Header from '../components/Header';
 import Input from '../components/Input';
@@ -12,7 +13,14 @@ export default function LayoutAdmin({ children }) {
     const [isOpen, setIsOpen] = useState(false);
     const handleSubmit = (e) => {
         e.preventDefault();
-        post('/update-whatsapp');
+        post('/update-whatsapp', {
+            onSuccess: () => {
+                console.log('abg');
+
+                setShowModalSetting(false);
+                Swal.fire('Berhasil', 'Nomor WhatsApp berhasil diperbarui.', 'success');
+            }
+        });
     };
 
     return (

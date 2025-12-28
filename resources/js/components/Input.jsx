@@ -9,7 +9,7 @@ export default function Input({ label, error, type = 'text', className = '', req
             )}
             <input
                 type={type}
-                className={`rounded-lg border-2 border-blue-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 ${
+                className={`rounded-lg border-2 border-blue-200 px-4 py-2.5 text-sm transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none ${
                     error ? 'border-orange-600 focus:border-orange-600 focus:ring-orange-200' : ''
                 } ${className}`}
                 {...props}

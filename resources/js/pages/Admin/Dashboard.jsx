@@ -27,7 +27,7 @@ export default function Dashboard({ member, memberCount }) {
         jam_tahap_pertama: '',
         jam_tahap_kedua: '',
         jam_akhir: '',
-        status_profit: '',
+        status_profit: ''
     });
 
     const showModal = (value) => {
@@ -49,7 +49,7 @@ export default function Dashboard({ member, memberCount }) {
             jam_tahap_pertama: value.profit?.[value.profit?.length - 1]?.jam_tahap_pertama || '',
             jam_tahap_kedua: value.profit?.[value.profit?.length - 1]?.jam_tahap_kedua || '',
             jam_akhir: value.profit?.[value.profit?.length - 1]?.jam_akhir || '',
-            status_profit: value.profit?.[value.profit?.length - 1]?.status_profit || '',
+            status_profit: value.profit?.[value.profit?.length - 1]?.status_profit || ''
         });
     };
 
@@ -62,12 +62,12 @@ export default function Dashboard({ member, memberCount }) {
     const submitHandler = (e) => {
         e.preventDefault();
         post('proses-deposit', {
-            onSuccess: closeModal,
+            onSuccess: closeModal
         });
     };
 
     const filteredMembers = member.filter(
-        (item) => item.nama_member?.toLowerCase().includes(search.toLowerCase()) || item.id_member?.toString().includes(search),
+        (item) => item.nama_member?.toLowerCase().includes(search.toLowerCase()) || item.id_member?.toString().includes(search)
     );
 
     const doneHandler = (e) => {
@@ -76,8 +76,8 @@ export default function Dashboard({ member, memberCount }) {
             { ...data },
             {
                 onSuccess: closeModal,
-                onError: (err) => console.log(err),
-            },
+                onError: (err) => console.log(err)
+            }
         );
     };
     console.log(memberSelect);
