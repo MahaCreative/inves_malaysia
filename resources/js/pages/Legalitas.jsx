@@ -6,211 +6,211 @@ import Layout from '../Layout';
 const legalitasData = [
     {
         id: 1,
-        link: 'POJK Nomor 01/POJK.04/2015',
+        link: 'POJK Nomor 01/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Pemeringkat Efek',
         pdfUrl: '/1-Converted-converted.pdf'
     },
     {
         id: 2,
-        link: 'POJK Nomor 02/POJK.04/2015',
+        link: 'POJK Nomor 02/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Perandar Surat Berharga',
         pdfUrl: '/2-Converted-converted.pdf'
     },
     {
         id: 3,
-        link: 'POJK Nomor 03/POJK.04/2015',
+        link: 'POJK Nomor 03/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Penyelenggara Layanan Alat Pengindeks Konstituen',
         pdfUrl: '/3-Converted-converted.pdf'
     },
     {
         id: 4,
-        link: 'POJK Nomor 04/POJK.04/2015',
+        link: 'POJK Nomor 04/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Penyelenggara Layanan Perdagangan Alternatif',
         pdfUrl: '/4-Converted-converted.pdf'
     },
     {
         id: 5,
-        link: 'POJK Nomor 05/POJK.04/2015',
+        link: 'POJK Nomor 05/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Pialang Berjangka',
         pdfUrl: '/5-Converted-converted.pdf'
     },
     {
         id: 6,
-        link: 'POJK Nomor 06/POJK.04/2015',
+        link: 'POJK Nomor 06/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Perwalian',
         pdfUrl: '/6-Converted-converted.pdf'
     },
     {
         id: 7,
-        link: 'POJK Nomor 07/POJK.04/2015',
+        link: 'POJK Nomor 07/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Wali Amanah',
         pdfUrl: '/7-Converted-converted.pdf'
     },
     {
         id: 8,
-        link: 'POJK Nomor 08/POJK.04/2015',
+        link: 'POJK Nomor 08/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Penyelenggara Layanan Agen Penjualan',
         pdfUrl: '/8-Converted-converted.pdf'
     },
     {
         id: 9,
-        link: 'POJK Nomor 09/POJK.04/2015',
+        link: 'POJK Nomor 09/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Penasehat Investasi',
         pdfUrl: '/9-Converted-converted.pdf'
     },
     {
         id: 10,
-        link: 'POJK Nomor 10/POJK.04/2015',
+        link: 'POJK Nomor 10/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Penjamin Emisi Efek',
         pdfUrl: '/10-Converted-converted.pdf'
     },
     {
         id: 11,
-        link: 'POJK Nomor 11/POJK.04/2015',
+        link: 'POJK Nomor 11/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Publik',
         pdfUrl: '/11-Converted-converted.pdf'
     },
     {
         id: 12,
-        link: 'POJK Nomor 12/POJK.04/2015',
+        link: 'POJK Nomor 12/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Efek',
         pdfUrl: '/12-Converted-converted.pdf'
     },
     {
         id: 13,
-        link: 'POJK Nomor 13/POJK.04/2015',
+        link: 'POJK Nomor 13/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Sekuritas',
         pdfUrl: '/13-Converted-converted.pdf'
     },
     {
         id: 14,
-        link: 'POJK Nomor 14/POJK.04/2015',
+        link: 'POJK Nomor 14/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Pengelola Investasi',
         pdfUrl: '/14-Converted-converted.pdf'
     },
     {
         id: 15,
-        link: 'POJK Nomor 15/POJK.04/2015',
+        link: 'POJK Nomor 15/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Reksa Dana',
         pdfUrl: '/15-Converted-converted.pdf'
     },
     {
         id: 16,
-        link: 'POJK Nomor 16/POJK.04/2015',
+        link: 'POJK Nomor 16/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Bursa Efek',
         pdfUrl: '/16-Converted-converted.pdf'
     },
     {
         id: 17,
-        link: 'POJK Nomor 17/POJK.04/2015',
+        link: 'POJK Nomor 17/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Lembaga Kliring dan Penjaminan',
         pdfUrl: '/17-Converted-converted.pdf'
     },
     {
         id: 18,
-        link: 'POJK Nomor 18/POJK.04/2015',
+        link: 'POJK Nomor 18/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Lembaga Penyimpanan dan Penyelesaian',
         pdfUrl: '/18-Converted-converted.pdf'
     },
     {
         id: 19,
-        link: 'POJK Nomor 19/POJK.04/2015',
+        link: 'POJK Nomor 19/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Bank Kustodian',
         pdfUrl: '/19-Converted-converted.pdf'
     },
     {
         id: 20,
-        link: 'POJK Nomor 20/POJK.04/2015',
+        link: 'POJK Nomor 20/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Pedagang Forex',
         pdfUrl: '/19-Converted-converted.pdf'
     },
     {
         id: 21,
-        link: 'POJK Nomor 21/POJK.04/2015',
+        link: 'POJK Nomor 21/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Penyelenggara Layanan Pinjam Meminjam Uang Berbasis Teknologi Informasi',
         pdfUrl: '/21-Converted-converted.pdf'
     },
     {
         id: 22,
-        link: 'POJK Nomor 22/POJK.04/2015',
+        link: 'POJK Nomor 22/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Penyelenggara Layanan Urun Dana Berbasis Teknologi Informasi',
         pdfUrl: '/22-Converted-converted.pdf'
     },
     {
         id: 23,
-        link: 'POJK Nomor 23/POJK.04/2015',
+        link: 'POJK Nomor 23/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Penyedia Layanan Investasi Digital',
         pdfUrl: '/23-Converted-converted.pdf'
     },
     {
         id: 24,
-        link: 'POJK Nomor 24/POJK.04/2015',
+        link: 'POJK Nomor 24/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Penyelenggara Robo-Advisor',
         pdfUrl: '/24-Converted-converted.pdf'
     },
     {
         id: 25,
-        link: 'POJK Nomor 25/POJK.04/2015',
+        link: 'POJK Nomor 25/POJK.04/2023',
         deskripsi: 'Perilaku Perusahaan Penyelenggara Layanan Kripto-Aset',
         pdfUrl: '/25-Converted-converted.pdf'
     },
     {
         id: 26,
-        link: 'Peraturan OJK Nomor 01/POJK.05/2015',
+        link: 'Peraturan OJK Nomor 01/POJK.05/2023',
         deskripsi: 'Pembentukan dan Pengorganisasian Bursa Efek',
         pdfUrl: '/26-Converted-converted.pdf'
     },
     {
         id: 27,
-        link: 'Peraturan OJK Nomor 02/POJK.05/2015',
+        link: 'Peraturan OJK Nomor 02/POJK.05/2023',
         deskripsi: 'Pembentukan dan Pengorganisasian Lembaga Kliring dan Penjaminan',
         pdfUrl: '/27-Converted-converted.pdf'
     },
     {
         id: 28,
-        link: 'Peraturan OJK Nomor 03/POJK.05/2015',
+        link: 'Peraturan OJK Nomor 03/POJK.05/2023',
         deskripsi: 'Pembentukan dan Pengorganisasian Lembaga Penyimpanan dan Penyelesaian',
         pdfUrl: '/28-Converted-converted.pdf'
     },
     {
         id: 29,
-        link: 'Peraturan OJK Nomor 04/POJK.05/2015',
+        link: 'Peraturan OJK Nomor 04/POJK.05/2023',
         deskripsi: 'Pendaftaran dan Pelaporan Efek Beragun Aset',
         pdfUrl: '/29-Converted-converted.pdf'
     },
     {
         id: 30,
-        link: 'Peraturan OJK Nomor 05/POJK.05/2015',
+        link: 'Peraturan OJK Nomor 05/POJK.05/2023',
         deskripsi: 'Penawaran Umum dan Persyaratan Pencatatan Efek Perusahaan',
         pdfUrl: '/30-Converted-converted.pdf'
     },
     {
         id: 31,
-        link: 'Peraturan OJK Nomor 06/POJK.05/2015',
+        link: 'Peraturan OJK Nomor 06/POJK.05/2023',
         deskripsi: 'Pembiayaan Sekunder atas Efek Bersifat Utang',
         pdfUrl: '/31-Converted-converted.pdf'
     },
     {
         id: 32,
-        link: 'Peraturan OJK Nomor 07/POJK.05/2015',
+        link: 'Peraturan OJK Nomor 07/POJK.05/2023',
         deskripsi: 'Pembatasan Transaksi Proprietary Trading',
         pdfUrl: '/32-Converted-converted.pdf'
     },
     {
         id: 33,
-        link: 'Peraturan OJK Nomor 08/POJK.05/2015',
+        link: 'Peraturan OJK Nomor 08/POJK.05/2023',
         deskripsi: 'Pemegang Saham Pengendali dan Pengurus Bank',
         pdfUrl: '/33-Converted-converted.pdf'
     },
     {
         id: 34,
-        link: 'Peraturan OJK Nomor 09/POJK.05/2015',
+        link: 'Peraturan OJK Nomor 09/POJK.05/2023',
         deskripsi: 'Pemberlakuan Standar Basel III bagi Bank Umum',
         pdfUrl: '/34-Converted-converted.pdf'
     },
     {
         id: 35,
-        link: 'Peraturan OJK Nomor 10/POJK.05/2015',
+        link: 'Peraturan OJK Nomor 10/POJK.05/2023',
         deskripsi: 'Tata Kelola Perusahaan yang Baik bagi Bank Umum',
         pdfUrl: '/34-Converted-converted.pdf'
     }
