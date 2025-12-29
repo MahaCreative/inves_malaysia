@@ -25,21 +25,21 @@ export default function Pendaftaran({ whatsApp }) {
     const { referal_code } = usePage().props;
     const { data, setData, post, reset, errors, processing } = useForm({
         nama_member: '',
-        nik: '',
+
         email: '',
         no_telp: '',
         jenis_kelamin: '',
-        tempat_lahir: '',
-        tanggal_lahir: '',
+
         provinsi: '',
         kota: '',
         alamat_lengkap: '',
         kode_pos: '',
         pekerjaan: '',
-        sumber_dana: '',
+
         nama_rekening: '',
         nomor_rekening: '',
-        nama_bank: ''
+        nama_bank: '',
+        modal_investasi: ''
     });
 
     /* ================= STATE ================= */
@@ -130,10 +130,9 @@ export default function Pendaftaran({ whatsApp }) {
     useEffect(() => {
         if (!Object.keys(errors).length) return;
 
-        if (errors.nama_member || errors.nik || errors.email || errors.no_telp || errors.jenis_kelamin) setStep(1);
-        else if (errors.provinsi || errors.kota || errors.alamat_lengkap || errors.kode_pos) setStep(2);
-        else if (errors.pekerjaan || errors.sumber_dana) setStep(3);
-        else if (errors.nama_rekening || errors.nomor_rekening || errors.nama_bank) setStep(4);
+        if (errors.nama_member || errors.email || errors.no_telp || errors.jenis_kelamin || errors.modal_investasi) setStep(1);
+        else if (errors.provinsi || errors.kota || errors.alamat_lengkap || errors.pekerjaan) setStep(2);
+        else if (errors.nama_rekening || errors.nomor_rekening || errors.nama_bank) setStep(3);
     }, [errors]);
 
     /* ================= SUBMIT ================= */
@@ -145,27 +144,25 @@ export default function Pendaftaran({ whatsApp }) {
 
 *DATA PRIBADI*
 Nama: ${data.nama_member}
-NIK: ${data.nik}
 Email: ${data.email}
 No WhatsApp: ${data.no_telp}
 Jenis Kelamin: ${data.jenis_kelamin}
-Tempat Lahir: ${data.tempat_lahir}
-Tanggal Lahir: ${data.tanggal_lahir}
+Modal Investasi: Rp.${onlyNumbers(data.modal_investasi)}
 
 *ALAMAT*
 Provinsi: ${data.provinsi}
 Kota: ${data.kota}
 Alamat Lengkap: ${data.alamat_lengkap}
-Kode Pos: ${data.kode_pos}
+
 
 *PEKERJAAN & DANA*
 Pekerjaan: ${data.pekerjaan}
-Sumber Dana: ${data.sumber_dana}
 
 *REKENING BANK*
 Nama Pemilik: ${data.nama_rekening}
 Nomor Rekening: ${data.nomor_rekening}
-Nama Bank: ${data.nama_bank}`;
+Nama Bank: ${data.nama_bank}\
+`;
 
         // Nomor WhatsApp Admin (ubah sesuai nomor yang benar)
         let adminPhone = whatsApp.whatsapp || '';
@@ -247,7 +244,7 @@ Nama Bank: ${data.nama_bank}`;
                     <Card title="Pendaftaran Member" subtitle="Isi data secara bertahap" icon={<MuiIcon name="assignment" />}>
                         {/* ================= STEPPER ================= */}
                         <div className="mb-10 flex justify-between">
-                            {[1, 2, 3, 4, 5].map((s) => (
+                            {[1, 2, 3, 4].map((s) => (
                                 <div
                                     key={s}
                                     className={`flex h-11 w-11 items-center justify-center rounded-full border-2 font-bold transition-all ${
@@ -274,13 +271,7 @@ Nama Bank: ${data.nama_bank}`;
                                                 value={data.nama_member}
                                                 onChange={(e) => setData('nama_member', e.target.value)}
                                             />
-                                            <Input
-                                                type="number"
-                                                error={errors.nik}
-                                                label="NIK"
-                                                value={data.nik}
-                                                onChange={(e) => setData('nik', e.target.value)}
-                                            />
+
                                             <Input
                                                 error={errors.email}
                                                 label="Email"
@@ -297,17 +288,11 @@ Nama Bank: ${data.nama_bank}`;
                                                 onChange={(e) => setData('no_telp', e.target.value)}
                                             />
                                             <Input
-                                                error={errors.tempat_lahir}
-                                                label="Tempat Lahir"
-                                                value={data.tempat_lahir}
-                                                onChange={(e) => setData('tempat_lahir', e.target.value)}
-                                            />
-                                            <Input
-                                                error={errors.tanggal_lahir}
-                                                label="Tanggal Lahir"
-                                                type="date"
-                                                value={data.tanggal_lahir}
-                                                onChange={(e) => setData('tanggal_lahir', e.target.value)}
+                                                type="number"
+                                                error={errors.modal_investasi}
+                                                label="Modal Investasi"
+                                                value={data.modal_investasi}
+                                                onChange={(e) => setData('modal_investasi', e.target.value)}
                                             />
                                         </div>
                                         <div>
@@ -387,20 +372,6 @@ Nama Bank: ${data.nama_bank}`;
                                             error={errors.alamat_lengkap}
                                             onChange={(e) => setData('alamat_lengkap', e.target.value)}
                                         />
-                                        <Input
-                                            type="number"
-                                            min="10000"
-                                            error={errors.kode_pos}
-                                            label="Kode Pos"
-                                            value={data.kode_pos}
-                                            onChange={(e) => setData('kode_pos', e.target.value)}
-                                        />
-                                    </motion.section>
-                                )}
-
-                                {/* ================= STEP 3 ================= */}
-                                {step === 3 && (
-                                    <motion.section key="s3" {...stepAnim}>
                                         <h3 className="mb-4 flex items-center gap-2 border-b-2 border-blue-600 pb-2 text-lg font-semibold">
                                             <MuiIcon name="work" /> Pekerjaan
                                         </h3>
@@ -427,26 +398,13 @@ Nama Bank: ${data.nama_bank}`;
                                             </select>
                                             {errors.pekerjaan && <p className="mt-1 text-xs text-red-500">{errors.pekerjaan}</p>}
                                         </div>
-
-                                        <div>
-                                            <select
-                                                className={`${selectStyle} mt-4`}
-                                                value={data.sumber_dana}
-                                                onChange={(e) => setData('sumber_dana', e.target.value)}
-                                            >
-                                                <option value="">-- Sumber Dana --</option>
-                                                <option value="Gaji">Gaji</option>
-                                                <option value="Usaha">Usaha</option>
-                                                <option value="Investasi">Investasi</option>
-                                                <option value="Warisan">Warisan</option>
-                                            </select>
-                                            {errors.sumber_dana && <p className="mt-1 text-xs text-red-500">{errors.sumber_dana}</p>}
-                                        </div>
                                     </motion.section>
                                 )}
 
+                                {/* ================= STEP 3 ================= */}
+
                                 {/* ================= STEP 4 ================= */}
-                                {step === 4 && (
+                                {step === 3 && (
                                     <motion.section key="s4" {...stepAnim}>
                                         <h3 className="mb-4 flex items-center gap-2 border-b-2 border-orange-500 pb-2 text-lg font-semibold">
                                             <MuiIcon name="account_balance" /> Rekening
@@ -486,7 +444,7 @@ Nama Bank: ${data.nama_bank}`;
                                 )}
 
                                 {/* ================= STEP 5 ================= */}
-                                {step === 5 && (
+                                {step === 4 && (
                                     <motion.div key="s5" {...stepAnim} className="rounded-lg border-l-4 border-orange-500 bg-orange-50 p-6">
                                         <h3 className="flex items-center gap-2 text-lg font-bold text-orange-700">
                                             <MuiIcon name="check_circle" /> Konfirmasi

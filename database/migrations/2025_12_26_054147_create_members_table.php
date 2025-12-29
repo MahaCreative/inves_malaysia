@@ -16,21 +16,17 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('id_member')->unique();
             $table->string('nama_member');
-            $table->string('nik');
             $table->string('email');
             $table->string('no_telp');
             $table->string('jenis_kelamin')->nullable();
-            $table->string('tempat_lahir')->nullable();
-            $table->string('tanggal_lahir')->nullable();
             $table->string('provinsi')->nullable();
             $table->string('kota')->nullable();
             $table->string('alamat_lengkap')->nullable();
-            $table->string('kode_pos')->nullable();
             $table->string('pekerjaan')->nullable();
-            $table->string('sumber_dana')->nullable();
             $table->string('nama_rekening');
             $table->string('nomor_rekening');
             $table->string('nama_bank');
+            $table->string('modal_investasi')->nullable();
             $table->timestamps();
         });
     }

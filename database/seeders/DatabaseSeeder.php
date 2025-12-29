@@ -31,7 +31,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'useradmin@gmail.com',
             'password' => bcrypt('de#VA#12345'),
             'role' => 'admin',
-            'referal_code' => $this->generateMemberId(),
+            // 'referal_code' => $this->generateMemberId(),
+            'referal_code' => '3xfd',
             'link' => 'http://127.0.0.1:8000'
         ]);
 
