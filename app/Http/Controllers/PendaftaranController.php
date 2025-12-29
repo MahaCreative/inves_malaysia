@@ -83,9 +83,18 @@ Kota: {$member->kota}
 Pekerjaan: {$member->pekerjaan}
 ID Member: {$member->id_member}
         ";
+        // normalisasi nomor target: jika diawali 0 => ganti leading 0 menjadi +62
+        $target = $whatsApp->whatsapp ?? '';
+        if (str_starts_with($target, '0')) {
+            $target = '+62' . substr($target, 1);
+        } elseif (!str_starts_with($target, '+') && str_starts_with($target, '62')) {
+            // jika mulai dengan 62 tanpa plus, tambahkan +
+            $target = '+' . $target;
+        }
+
         SendMessageWa::send(
             [
-                'target' => $whatsApp->whatsapp,
+                'target' => $target,
                 'message' => $message,
             ]
         );

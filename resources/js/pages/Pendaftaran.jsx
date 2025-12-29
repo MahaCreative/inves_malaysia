@@ -168,8 +168,14 @@ Nomor Rekening: ${data.nomor_rekening}
 Nama Bank: ${data.nama_bank}`;
 
         // Nomor WhatsApp Admin (ubah sesuai nomor yang benar)
-        const adminPhone = whatsApp.whatsapp;
-        const whatsappUrl = `https://wa.me/${adminPhone}?text=${encodeURIComponent(whatsappMessage)}`;
+        let adminPhone = whatsApp.whatsapp || '';
+        // Jika nomor dimulai dengan 0 (contoh: 085...), ganti leading 0 menjadi +62
+        if (adminPhone.startsWith('0')) {
+            adminPhone = '+62' + adminPhone.slice(1);
+        }
+        // Untuk membuka wa.me gunakan nomor tanpa plus
+        const adminPhoneForUrl = adminPhone.replace(/^\+/, '');
+        const whatsappUrl = `https://wa.me/${adminPhoneForUrl}?text=${encodeURIComponent(whatsappMessage)}`;
         // Kirim data ke server
         post(`/${referal_code}/store-pendaftaran-member`, {
             preserveScroll: true,

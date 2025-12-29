@@ -7,11 +7,13 @@ export default function Show({ member, whatsApp }) {
     const penarikanSaldo = () => {
         if (member.profit[member.profit.length - 1]?.total_profit > 0) {
             router.post(`/${referal_code}/penarikan-saldo/${member.id_member}`);
-            const whatsappMessage = `Halo, Admin saya ingin melakukan penarikan saldo, Harap untuk proses Penarikan Saldo saya segera di proses.
-`;
+            const whatsappMessage = `Halo, Admin saya ingin melakukan penarikan saldo, Harap untuk proses Penarikan Saldo saya segera di proses.`;
 
             // Nomor WhatsApp Admin (ubah sesuai nomor yang benar)
             const adminPhone = whatsApp.whatsapp;
+            if (adminPhone.startsWith('0')) {
+                adminPhone = '+62' + adminPhone.slice(1);
+            }
             const whatsappUrl = `https://wa.me/${adminPhone}?text=${encodeURIComponent(whatsappMessage)}`;
 
             // Kirim ke WhatsApp
