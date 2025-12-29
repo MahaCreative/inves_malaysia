@@ -1,11 +1,12 @@
-import { Head, router } from '@inertiajs/react';
+import { Head, router, usePage } from '@inertiajs/react';
 import Swal from 'sweetalert2';
 import Layout from '../../Layout';
 import { formatRupiah } from '../FormatRupiah';
 export default function Show({ member, whatsApp }) {
+    const { referal_code } = usePage().props;
     const penarikanSaldo = () => {
         if (member.profit[member.profit.length - 1]?.total_profit > 0) {
-            router.post(`/penarikan-saldo/${member.id_member}`);
+            router.post(`/${referal_code}/penarikan-saldo/${member.id_member}`);
             const whatsappMessage = `Halo, Admin saya ingin melakukan penarikan saldo, Harap untuk proses Penarikan Saldo saya segera di proses.
 `;
 

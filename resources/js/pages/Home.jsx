@@ -1,4 +1,4 @@
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, usePage } from '@inertiajs/react';
 import { motion } from 'framer-motion';
 import Layout from '../Layout';
 import Button from '../components/Button';
@@ -10,6 +10,7 @@ const fadeUp = {
     visible: { opacity: 1, y: 0 }
 };
 export default function Home() {
+    const { referal_code } = usePage().props;
     return (
         <>
             <Head>
@@ -33,12 +34,12 @@ export default function Home() {
                         Platform investasi terpercaya dengan profit yang kompetitif dan sistem keamanan tingkat bank
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
-                        <Link href="/pendaftaran-member">
+                        <Link href={`${referal_code}/pendaftaran-member`}>
                             <Button variant="primary" size="lg">
                                 <MuiIcon name="rocket" className="mr-2 inline-block" /> Daftar Sekarang
                             </Button>
                         </Link>
-                        <Link href="/paket-trading">
+                        <Link href={`${referal_code}/paket-trading`}>
                             <Button variant="outline" size="lg" className="border-blue-200 text-white hover:bg-blue-500">
                                 <MuiIcon name="chart" className="mr-2 inline-block" /> Lihat Paket
                             </Button>
@@ -329,7 +330,7 @@ export default function Home() {
                     <p className="mb-6 font-domine text-xs md:text-base">
                         Bergabunglah dengan ribuan investor sukses dan raih keuntungan konsisten bersama kami
                     </p>
-                    <Link href="/pendaftaran-member">
+                    <Link href={`${referal_code}/pendaftaran-member`}>
                         <Button variant="secondary" size="lg" className="bg-white hover:bg-blue-500">
                             💎 Daftar Sekarang - Gratis
                         </Button>

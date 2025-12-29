@@ -7,7 +7,7 @@ import Input from '../components/Input';
 import Modal from '../components/Modal';
 
 export default function LayoutAdmin({ children }) {
-    const { get_wa } = usePage().props;
+    const { get_wa, auth } = usePage().props;
     const [showModalSetting, setShowModalSetting] = useState(false);
     const { data, setData, post, errors } = useForm({ whatsapp: get_wa?.whatsapp || '' });
     const [isOpen, setIsOpen] = useState(false);
@@ -33,6 +33,12 @@ export default function LayoutAdmin({ children }) {
                 {/* Header */}
 
                 <Header onSettingsClick={() => setShowModalSetting(true)} />
+                <div className="rounded-md border-orange-600 bg-orange-500/10 px-5 py-1 text-orange-600">
+                    <p>Silahkan membagikan Link Referal Anda</p>
+                    <a className="text-xs text-blue-500" href={`/www.dhervainvestindo.site/${auth.user.referal_code}`}>
+                        www.dhervainvestindo.site/{auth.user.referal_code}
+                    </a>
+                </div>
                 {/* Page Content */}
                 <main className="flex-1 overflow-y-auto">
                     <div className="px-6 py-8">{children}</div>

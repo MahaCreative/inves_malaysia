@@ -11,8 +11,9 @@ class DashboardController extends Controller
 {
     public function index(Request $request)
     {
+        $user = $request->user();
         $memberCount = Member::count();
-        $member = Member::with('profit')->latest()->get();
+        $member = Member::with('profit')->where('user_id', $user->id)->latest()->get();
         return inertia('Admin/Dashboard', compact('member', 'memberCount'));
     }
 

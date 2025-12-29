@@ -21,6 +21,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'referal_code',
+        'link',
     ];
 
     /**
@@ -44,5 +47,9 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    public function whatsapp()
+    {
+        return $this->hasOne(WhatsAppSetting::class, 'user_id', 'id');
     }
 }

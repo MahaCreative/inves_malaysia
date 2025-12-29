@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('whats_app_settings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('whatsapp');
             $table->timestamps();
         });

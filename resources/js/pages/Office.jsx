@@ -50,12 +50,6 @@ export default function Office() {
                             </div>
 
                             <div className="mt-6 flex items-center gap-4">
-                                <a
-                                    href="/contact"
-                                    className="inline-flex items-center gap-2 rounded-md bg-sky-600 px-4 py-2 text-white shadow hover:bg-sky-500"
-                                >
-                                    Hubungi Kami
-                                </a>
                                 <a href="/image/OFFICE.png" target="_blank" rel="noreferrer" className="text-sm text-slate-600 hover:underline">
                                     Lihat foto kantor
                                 </a>

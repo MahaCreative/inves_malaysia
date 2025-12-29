@@ -1,10 +1,11 @@
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 import axios from 'axios';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 import Layout from '../../Layout';
 
 export default function Member() {
+    const { referal_code } = usePage().props;
     const [data, setData] = useState(null);
     const [idmember, setIdMember] = useState('');
     const searchMember = async () => {
@@ -17,7 +18,7 @@ export default function Member() {
         });
 
         try {
-            const response = await axios.post('/get-member-area', {
+            const response = await axios.post(`/${referal_code}/get-member-area`, {
                 search: idmember
             });
 
@@ -34,7 +35,7 @@ export default function Member() {
                     cancelButtonText: 'Batal'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = `/member-area/${data.id_member}`;
+                        window.location.href = `/${referal_code}/member-area/${data.id_member}`;
                     }
                 });
             }

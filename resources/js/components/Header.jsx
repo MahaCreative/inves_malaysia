@@ -1,6 +1,7 @@
-import { Link } from '@inertiajs/react';
+import { Link, usePage } from '@inertiajs/react';
 
 export default function Header({ user, onSettingsClick }) {
+    const { auth } = usePage().props;
     return (
         <header className="sticky top-0 z-40 border-b border-gray-200 bg-white shadow-md">
             <div className="flex items-center justify-between px-6 py-4">
@@ -17,6 +18,22 @@ export default function Header({ user, onSettingsClick }) {
                     >
                         Home
                     </Link>
+                    <Link
+                        href="/dashboard"
+                        as="button"
+                        className="rounded-lg bg-blue-500 px-4 py-2.5 font-oswald text-sm font-semibold text-white transition-all hover:bg-blue-700 hover:shadow-lg"
+                    >
+                        Dashboard
+                    </Link>
+                    {auth.user.role == 'admin' && (
+                        <Link
+                            href="/users"
+                            as="button"
+                            className="rounded-lg bg-blue-500 px-4 py-2.5 font-oswald text-sm font-semibold text-white transition-all hover:bg-blue-700 hover:shadow-lg"
+                        >
+                            User
+                        </Link>
+                    )}
                     <button
                         onClick={onSettingsClick}
                         className="rounded-lg bg-blue-500 px-4 py-2.5 font-oswald text-sm font-semibold text-white transition-all hover:bg-blue-700 hover:shadow-lg"

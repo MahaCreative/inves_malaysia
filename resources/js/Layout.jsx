@@ -5,7 +5,7 @@ import MuiIcon from './components/MuiIcon';
 import data from './pages/data';
 
 export default function Layout({ children }) {
-    const { auth } = usePage().props;
+    const { auth, referal_code } = usePage().props;
     const ref = useRef(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -21,19 +21,19 @@ export default function Layout({ children }) {
     }, []);
 
     const navItems = [
-        { label: 'Home', href: '/' },
-        { label: 'Paket Trading', href: '/paket-trading' },
-        { label: 'Legalitas', href: '/legalitas' },
+        { label: 'Home', href: `/${referal_code}/` },
+        { label: 'Paket Trading', href: `/${referal_code}/paket-trading` },
+        { label: 'Legalitas', href: `/${referal_code}/legalitas` },
         {
             label: 'Tentang Kami',
             children: [
-                { label: 'Office', href: '/office' },
-                { label: 'Profil', href: '/profil' },
-                { label: 'Dasar Prinsip', href: '/dasar-prinsip' }
+                { label: 'Office', href: `/${referal_code}/office` },
+                { label: 'Profil', href: `/${referal_code}/profil` },
+                { label: 'Dasar Prinsip', href: `/${referal_code}/dasar-prinsip` }
             ]
         },
-        { label: 'Pendaftaran', href: '/pendaftaran-member' },
-        { label: 'ID Member', href: '/member-area' },
+        { label: 'Pendaftaran', href: `/${referal_code}/pendaftaran-member` },
+        { label: 'ID Member', href: `/${referal_code}/member-area` },
         auth.user ? { label: 'Dashboard', href: '/dashboard' } : { label: 'Login', href: '/login' }
     ];
 

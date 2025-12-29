@@ -1,4 +1,4 @@
-import { Head, router, useForm } from '@inertiajs/react';
+import { Head, router, useForm, usePage } from '@inertiajs/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
@@ -22,6 +22,7 @@ const stepAnim = {
 const onlyNumbers = (value) => value.replace(/[^0-9]/g, '');
 
 export default function Pendaftaran({ whatsApp }) {
+    const { referal_code } = usePage().props;
     const { data, setData, post, reset, errors, processing } = useForm({
         nama_member: '',
         nik: '',
@@ -169,21 +170,8 @@ Nama Bank: ${data.nama_bank}`;
         // Nomor WhatsApp Admin (ubah sesuai nomor yang benar)
         const adminPhone = whatsApp.whatsapp;
         const whatsappUrl = `https://wa.me/${adminPhone}?text=${encodeURIComponent(whatsappMessage)}`;
-
-        // Kirim ke WhatsApp
-        window.open(whatsappUrl, '_blank');
-
-        // Tampilkan loading
-        Swal.fire({
-            title: 'Mengirim Data',
-            text: 'Mohon tunggu...',
-            allowOutsideClick: false,
-            allowEscapeKey: false,
-            didOpen: () => Swal.showLoading()
-        });
-
         // Kirim data ke server
-        post('/pendaftaran-member', {
+        post(`/${referal_code}/store-pendaftaran-member`, {
             preserveScroll: true,
             preserveState: true,
             onSuccess: () => {
@@ -196,7 +184,7 @@ Nama Bank: ${data.nama_bank}`;
                 reset();
                 setStep(1);
 
-                router.get('/member-area');
+                router.get(`/${referal_code}/member-area`);
             },
             onError: (err) => {
                 console.log(err.response);
@@ -208,6 +196,17 @@ Nama Bank: ${data.nama_bank}`;
                     confirmButtonColor: '#f97316'
                 });
             }
+        });
+        // Kirim ke WhatsApp
+        window.open(whatsappUrl, '_blank');
+
+        // Tampilkan loading
+        Swal.fire({
+            title: 'Mengirim Data',
+            text: 'Mohon tunggu...',
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            didOpen: () => Swal.showLoading()
         });
     };
 

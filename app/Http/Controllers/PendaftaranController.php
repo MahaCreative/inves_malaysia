@@ -7,6 +7,7 @@ use App\Models\Profit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Http\Controllers\SendMessageWa;
+use App\Models\User;
 use App\Models\WhatsAppSetting;
 
 class PendaftaranController extends Controller
@@ -25,9 +26,10 @@ class PendaftaranController extends Controller
         return inertia('Pendaftaran', compact('whatsApp'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $referal_code)
     {
-        $whatsApp = WhatsAppSetting::first();
+        $user = User::where('referal_code', $referal_code)->first();
+        $whatsApp = WhatsAppSetting::where('user_id', $user->id)->first();
         // dd($request->all());
         $request->validate([
             'nama_member'      => 'required|string|max:255',
@@ -49,6 +51,7 @@ class PendaftaranController extends Controller
         ]);
 
         $member = Member::create([
+            'user_id'         => $user->id,
             'id_member'       => $this->generateMemberId(),
             'nama_member'     => $request->nama_member,
             'nik'             => $request->nik,

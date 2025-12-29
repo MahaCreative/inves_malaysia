@@ -10,4 +10,8 @@ class HomeController extends Controller
     {
         return inertia('Home');
     }
+    public function home($referal_code)
+    {
+        return inertia('Home');
+    }
 }

@@ -3,33 +3,37 @@
 namespace App\Http\Controllers;
 
 use App\Models\Member;
+use App\Models\User;
 use App\Models\WhatsAppSetting;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
-    public function index()
+    public function index($referal_code)
     {
         return inertia('Member/Member');
     }
 
-    public function search(Request $request)
+    public function search(Request $request, $referal_code)
     {
+
         $members = Member::where('id_member', '=', $request->search)
             ->first();
         return response()->json($members);
     }
 
-    public function show(Request $request, $id_member)
+    public function show(Request $request, $referal_code, $id_member)
     {
-        $whatsApp = WhatsAppSetting::first();
+        $user = User::where('referal_code', $referal_code)->first();
+        $whatsApp = WhatsAppSetting::where('user_id', $user->id)->first();
         $member = Member::with('profit')->where('id_member', $id_member)->first();
         return inertia('Member/Show', compact('member', 'whatsApp'));
     }
 
-    public function penarikan_saldo(Request $request, $id_member)
+    public function penarikan_saldo(Request $request, $referal_code, $id_member)
     {
-        $settingWa = WhatsAppSetting::first();
+        $user = User::where('referal_code', $referal_code)->first();
+        $settingWa = WhatsAppSetting::where('user_id', $user->id)->first();
         $member = Member::where('id_member', $id_member)->first();
         SendMessageWa::send(
             [
