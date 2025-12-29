@@ -9,8 +9,9 @@ class SettingWA extends Controller
 {
     public function store(Request $request)
     {
+        $user = $request->user();
 
-        $wa = WhatsAppSetting::first();
+        $wa = WhatsAppSetting::where('user_id', $user->id)->first();
         $wa->update(['whatsapp' => $request->whatsapp]);
     }
 }

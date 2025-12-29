@@ -38,13 +38,14 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         [$message, $author] = str(Inspiring::quotes()->random())->explode('-');
-
+        $request->user();
+        $get_wa = WhatsAppSetting::where('user_id', $request->user()->id)->first();
         return [
             ...parent::share($request),
 
             'name' => config('app.name'),
             'quote' => ['message' => trim($message), 'author' => trim($author)],
-            'get_wa' => WhatsAppSetting::first(),
+            'get_wa' => $get_wa,
             'auth' => [
                 'user' => $request->user(),
             ],

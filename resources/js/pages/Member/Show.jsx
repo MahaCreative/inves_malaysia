@@ -86,7 +86,7 @@ export default function Show({ member, whatsApp }) {
                                     Status : <span className="font-bold text-blue-500">On Proses</span>
                                 </p>
                                 <p className="flex h-[40px] items-center justify-center bg-black py-1 font-oswald text-base font-bold tracking-tighter text-white md:text-xl">
-                                    Saldo : Rp.{' '}
+                                    Saldo : Rp.{formatRupiah(member.profit[member.profit.length - 1]?.total_profit || 0)}
                                 </p>
                             </th>
                         </tr>

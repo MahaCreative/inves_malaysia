@@ -35,8 +35,8 @@ export default function LayoutAdmin({ children }) {
                 <Header onSettingsClick={() => setShowModalSetting(true)} />
                 <div className="rounded-md border-orange-600 bg-orange-500/10 px-5 py-1 text-orange-600">
                     <p>Silahkan membagikan Link Referal Anda</p>
-                    <a className="text-xs text-blue-500" href={`/www.dhervainvestindo.site/${auth.user.referal_code}`}>
-                        www.dhervainvestindo.site/{auth.user.referal_code}
+                    <a className="text-xs text-blue-500" href={`/${auth.user.referal_code}`} target="_blank" rel="noopener noreferrer">
+                        https://www.dhervainvestindo.site/{auth.user.referal_code}
                     </a>
                 </div>
                 {/* Page Content */}
