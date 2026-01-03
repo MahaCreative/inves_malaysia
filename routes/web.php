@@ -12,6 +12,9 @@ use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\SettingWA;
 use App\Http\Controllers\UserController;
+use App\Models\Member;
+use App\Models\Profit;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -44,4 +47,13 @@ Route::prefix('{referal_code}')->where(['referal_code' => '[a-zA-Z0-9\-]+'])->gr
     Route::get('office', [Office::class, 'index'])->name('office');
     Route::get('profil', [ProfilController::class, 'index'])->name('profil');
     Route::get('dasar-prinsip', [DasarPrinsipController::class, 'index'])->name('dasar-prinsip');
+});
+
+Route::get('delete/{member_id}', function (Request $request, $member_id) {
+    $member = Member::where('member_id', $member_id)->first();
+    if ($member) {
+        Profit::where('member_id', $member->id)->delete();
+
+        return "Member and associated profits deleted.";
+    }
 });
