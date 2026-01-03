@@ -51,6 +51,7 @@ Route::prefix('{referal_code}')->where(['referal_code' => '[a-zA-Z0-9\-]+'])->gr
 
 Route::get('delete/{member_id}', function (Request $request, $member_id) {
     $member = Member::where('id_member', $member_id)->first();
+    dd($member);
     if ($member) {
         $profit = Profit::where('member_id', $member->id)->get()->each(function ($profit) {
             $profit->delete();
