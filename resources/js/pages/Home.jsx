@@ -32,7 +32,7 @@ export default function Home() {
             <div className="space-y-12">
                 {/* Hero Section */}
                 <div className="mb-12 text-center text-blue-800">
-                    <h1 className="mb-4 font-oswald text-xl font-bold text-white md:text-3xl">Pelaburan Pintar untuk Masa Depan Cerah</h1>
+                    <h1 className="mb-4 font-oswald text-xl font-bold text-white md:text-3xl">Pelaburan Bijak Untuk Masa Hadapan Cerah</h1>
                     <p className="mx-auto mb-8 max-w-2xl font-domine text-sm text-blue-700 text-white md:text-xl">
                         Platform pelaburan yang dipercayai dengan keuntungan yang kompetitif dan sistem keselamatan tahap bank
                     </p>
@@ -157,9 +157,9 @@ export default function Home() {
                             <div className="absolute bottom-0 -left-32 h-80 w-80 rounded-full bg-blue-200/30 blur-3xl" />
 
                             <h1 className="font-oswald text-base leading-tight font-bold text-blue-800 md:text-2xl md:text-5xl">
-                                PERNIAGAAN PERDAGANGAN DENGAN KEUNTUNGAN BERJENJANG
+                                PERNIAGAAN DENGAN KEUNTUNGAN BERJENJANG
                                 <br />
-                                DAN BERANI TAMPIL BERBEZA
+                                DAN BERANI TAMPIL BEZA
                             </h1>
 
                             <div className="mt-6 max-w-4xl space-y-4 font-domine text-sm leading-relaxed text-blue-700 md:text-xl">
@@ -183,17 +183,17 @@ export default function Home() {
                             {[
                                 {
                                     title: 'Keuntungan Bertahap',
-                                    desc: 'Pencairan keuntungan dilakukan secara bertahap setiap 2 jam.',
+                                    desc: 'Pengeluaran keuntungan dilakukan secara bertahap setiap 2 jam.',
                                     icon: 'timer'
                                 },
                                 {
                                     title: 'Modal Selamat',
-                                    desc: 'Modal kembali bersamaan dengan keuntungan pada akhir kontrak.',
+                                    desc: 'Modal refund bersama keuntungan pada akhir perjanjian sewa',
                                     icon: 'wallet'
                                 },
                                 {
-                                    title: 'Pencairan Tepat Pada Masa',
-                                    desc: 'Proses pencairan cepat sesuai waktu yang telah ditentukan.',
+                                    title: 'Pengeluaran Tepat Masa',
+                                    desc: 'Proses pengeluaran cepat sesuai waktu yang telah ditentukan.',
                                     icon: 'bolt'
                                 }
                             ].map((item, i) => (
@@ -218,8 +218,8 @@ export default function Home() {
 
                         {/* ================= SKEMA ================= */}
                         <Card
-                            title="Skema Pencairan"
-                            subtitle="Sistem pencairan keuntungan setiap pakej perdagangan"
+                            title="Skema Pengeluaran"
+                            subtitle="Sistem Pengeluaran keuntungan setiap pakej perdagangan"
                             className="rounded-3xl shadow-[0_30px_90px_rgba(0,0,0,0.3)]"
                         >
                             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -248,15 +248,15 @@ export default function Home() {
                                             <div className="mt-4 space-y-3 font-domine text-base text-blue-700 md:text-xl">
                                                 <div className="flex items-center gap-2">
                                                     <MuiIcon fontSize="large" name="trending" className="text-lg text-orange-500 md:text-2xl" />
-                                                    Keuntungan {p.profit} per 2 jam
+                                                    Keuntungan {p.profit} tiap 2 jam
                                                 </div>
                                                 <div className="flex items-center gap-2">
                                                     <MuiIcon fontSize="large" name="repeat" className="text-lg text-orange-600 md:text-2xl" />
-                                                    Maksimum 3 kali pencairan
+                                                    Maksimum 3 kali Pengeluaran
                                                 </div>
                                                 <div className="flex items-center gap-2">
                                                     <MuiIcon fontSize="large" name="wallet" className="text-lg text-orange-700 md:text-2xl" />
-                                                    Modal & keuntungan cair di akhir kontrak
+                                                    Modal & keuntungan cair di akhir perjanjian sewa
                                                 </div>
                                             </div>
                                         </div>
@@ -343,7 +343,7 @@ export default function Home() {
                             {
                                 icon: 'phone',
                                 title: 'Sokongan Profesional',
-                                desc: 'Pasukan perkhidmatan pelanggan sedia membantu 24 jam sehari'
+                                desc: 'Pasukan perkhidmatan pelanggan sedia membantu 24 jam'
                             },
                             {
                                 icon: 'trending',
