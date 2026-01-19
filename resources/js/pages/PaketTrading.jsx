@@ -229,15 +229,14 @@ export default function PaketTrading() {
                                         <h2 className="text-xs font-bold md:text-sm" style={{ fontFamily: 'Poppins, sans-serif' }}>
                                             {paket.title}
                                         </h2>
-                                        <span className="rounded-full bg-white/20 px-3 py-1 text-xs" style={{ fontFamily: 'Inter, sans-serif' }}>
-                                            {paket.subtitle}
-                                        </span>
-
                                         <div className="mt-4">
                                             <p className="text-xs opacity-80">Total Profit</p>
                                             <p className="text-lg font-bold md:text-lg">{paket.totalProfit}</p>
                                         </div>
                                     </div>
+                                    <span className="rounded-full bg-white/20 px-3 py-1 text-xs" style={{ fontFamily: 'Inter, sans-serif' }}>
+                                        {paket.subtitle}
+                                    </span>
                                 </div>
 
                                 {/* Body */}
