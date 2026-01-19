@@ -1,9 +1,9 @@
 export function formatRupiah(angka) {
-    if (angka === null || angka === undefined) return 'Rp. 0';
+    if (angka === null || angka === undefined) return 'RM 0';
 
-    return new Intl.NumberFormat('id-ID', {
+    return new Intl.NumberFormat('ms-MY', {
         style: 'currency',
-        currency: 'IDR',
-        minimumFractionDigits: 0,
+        currency: 'MYR',
+        minimumFractionDigits: 0
     }).format(angka);
 }

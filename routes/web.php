@@ -8,7 +8,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\Office;
 use App\Http\Controllers\PaketTradingController;
+
 use App\Http\Controllers\PendaftaranController;
+use App\Http\Controllers\PrivaccPolicyController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\SettingWA;
 use App\Http\Controllers\UserController;
@@ -39,13 +41,13 @@ Route::middleware(['auth'])->group(function () {
 Route::prefix('{referal_code}')->where(['referal_code' => '[a-zA-Z0-9\-]+'])->group(function () {
     Route::get('/', [HomeController::class, 'home'])->name('home');
     Route::get('paket-trading', [PaketTradingController::class, 'index'])->name('paket-trading');
-    Route::get('/member-area', [MemberController::class, 'index'])->name('member');
+    Route::get('/ahli-area', [MemberController::class, 'index'])->name('member');
     Route::post('/get-member-area', [MemberController::class, 'search'])->name('search-member');
     Route::post('penarikan-saldo/{id_member}', [MemberController::class, 'penarikan_saldo'])->name('penarikan_saldo');
-    Route::get('/member-area/{id_member}', [MemberController::class, 'show'])->name('show-member');
-    Route::get('pendaftaran-member', [PendaftaranController::class, 'index'])->name('pendaftaran');
+    Route::get('/ahli-area/{id_member}', [MemberController::class, 'show'])->name('show-member');
+    Route::get('pendaftaran-ahli', [PendaftaranController::class, 'index'])->name('pendaftaran');
     Route::post('store-pendaftaran-member', [PendaftaranController::class, 'store']);
-    Route::get('legalitas', [LegalitasController::class, 'index'])->name('legalitas');
+    Route::get('privacy-policy', [PrivaccPolicyController::class, 'index'])->name('privacy-policy');
     Route::get('office', [Office::class, 'index'])->name('office');
     Route::get('profil', [ProfilController::class, 'index'])->name('profil');
     Route::get('dasar-prinsip', [DasarPrinsipController::class, 'index'])->name('dasar-prinsip');

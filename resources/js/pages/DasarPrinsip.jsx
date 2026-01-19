@@ -3,72 +3,94 @@ import { motion } from 'framer-motion';
 import Layout from '../Layout';
 
 export default function DasarPrinsip() {
+    const principles = [
+        {
+            title: 'Kepercayaan dan Keselamatan',
+            description:
+                'Kami mengutamakan kepercayaan pengguna dengan memastikan tahap keselamatan yang tinggi melalui perlindungan berlapis, amalan terbaik industri dan pematuhan kepada piawaian keselamatan antarabangsa. Keselamatan aset dan data pelanggan adalah keutamaan kami.'
+        },
+        {
+            title: 'Pematuhan dan Tadbir Urus',
+            description:
+                'Kami beroperasi selaras dengan undang-undang dan peraturan yang ditetapkan oleh pihak berkuasa berkaitan. Pematuhan terhadap rangka kerja kawal selia serta amalan tadbir urus yang baik menjadi asas kepada operasi dan perkhidmatan kami.'
+        },
+        {
+            title: 'Ketelusan dan Integriti',
+            description:
+                'Kami percaya kepada ketelusan dalam setiap aspek perkhidmatan. Maklumat disampaikan secara jelas, tepat dan bertanggungjawab bagi membina hubungan jangka panjang yang berasaskan integriti dan saling percaya.'
+        },
+        {
+            title: 'Fokus kepada Pelanggan',
+            description:
+                'Kami komited untuk menyediakan pengalaman pengguna yang mudah, selamat dan boleh dipercayai. Keperluan pelanggan menjadi panduan utama dalam pembangunan produk, perkhidmatan dan sokongan digital kami.'
+        },
+        {
+            title: 'Inovasi Berterusan',
+            description:
+                'Kami sentiasa berusaha untuk berinovasi dan menambah baik teknologi serta perkhidmatan bagi memenuhi keperluan landskap kewangan digital yang sentiasa berkembang.'
+        },
+        {
+            title: 'Akses Kewangan Global',
+            description:
+                'Kami percaya bahawa setiap individu berhak mendapat akses kepada sistem kewangan yang moden dan inklusif. Melalui teknologi aset digital, kami berusaha membuka peluang kewangan kepada masyarakat global.'
+        },
+        {
+            title: 'Tanggungjawab Sosial',
+            description:
+                'Kami menjalankan operasi secara bertanggungjawab dengan mengambil kira kesan sosial dan ekonomi. Pendidikan, kesedaran dan penggunaan aset digital secara beretika merupakan sebahagian daripada komitmen kami kepada masyarakat.'
+        },
+        {
+            title: 'Kepelbagaian dan Kerjasama',
+            description:
+                'Kami menghargai kepelbagaian latar belakang, budaya dan pandangan. Kerjasama yang kukuh dalam pasukan antarabangsa kami membolehkan kami mencapai matlamat bersama dengan lebih berkesan.'
+        },
+        {
+            title: 'Kecemerlangan Profesional',
+            description:
+                'Kami mengekalkan standard profesionalisme yang tinggi melalui pembelajaran berterusan, peningkatan kemahiran dan usaha tanpa henti untuk mencapai kecemerlangan dalam setiap aspek perkhidmatan.'
+        }
+    ];
+
     return (
         <>
             <Head>
-                <title>Dasar Prinsip & Kode Etik - PT Dherva Investindo</title>
+                <title>Dasar Prinsip Luno Malaysia - Prinsip dan Nilai Kami</title>
                 <meta
                     name="description"
-                    content="Dasar prinsip, kebijakan, dan kode etik PT Dherva Investindo. Independensi dan komitmen integritas."
+                    content="Ketahui dasar prinsip Luno Malaysia yang menekankan kepercayaan, keselamatan, pematuhan, dan inovasi dalam perkhidmatan mata wang kripto."
                 />
-                <meta name="keywords" content="kode etik, dasar prinsip, Dherva Investindo, manajer investasi" />
+                <meta name="keywords" content="Luno Malaysia, dasar prinsip, kepercayaan, keselamatan, pematuhan, inovasi, mata wang kripto" />
                 <meta name="robots" content="index,follow" />
             </Head>
 
-            <div className="bg-white py-12">
-                <div className="mx-auto max-w-5xl px-4">
-                    <motion.h1 initial={{ y: -8, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="mb-4 text-3xl font-bold text-emerald-700">
-                        Dasar Prinsip & Kode Etik
-                    </motion.h1>
+            <div className="bg-gradient-to-b from-white to-slate-50 py-12">
+                <div className="mx-auto max-w-6xl px-4">
+                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-16 text-center">
+                        <h1 className="mb-4 text-4xl font-bold text-blue-700">Dasar Prinsip Luno</h1>
+                        <p className="mx-auto max-w-3xl text-lg text-slate-600">
+                            Prinsip-prinsip ini membentuk asas kepada setiap keputusan dan tindakan kami, memastikan kami sentiasa komited kepada
+                            kecemerlangan, integriti, dan inovasi dalam dunia mata wang kripto.
+                        </p>
+                    </motion.div>
 
-                    <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-slate-700">
-                        PT Dherva Investindo adalah perusahaan manajer investasi yang independen dan tidak terafiliasi dengan perusahaan pialang
-                        maupun penjamin emisi, sehingga kebijakan investasinya bebas dari konflik kepentingan.
-                    </motion.p>
-
-                    <div className="mt-6 rounded-lg bg-gradient-to-br from-emerald-50 to-white p-6 shadow">
-                        <h3 className="mb-2 text-lg font-semibold text-emerald-700">Kode Etik</h3>
-                        <p className="mb-4 text-sm text-slate-600">Silakan unduh atau lihat pratinjau dokumen kode etik kami.</p>
-
-                        <div className="flex items-center gap-3">
-                            <a
-                                href="/KODE_ETIK_MANAJER_INVESTASI_PT_ONEWAY_INDONESIA111.pdf"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="rounded-md bg-orange-600 px-4 py-2 text-white hover:bg-orange-500"
+                    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                        {principles.map((principle, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                                className="rounded-xl border border-slate-200 bg-white p-6 shadow-md transition-shadow duration-300 hover:shadow-lg"
                             >
-                                Unduh PDF
-                            </a>
-                            <a href="#preview" className="text-sm text-orange-600 hover:underline">
-                                Lihat pratinjau
-                            </a>
-                        </div>
-                    </div>
-
-                    <div id="preview" className="mt-6 h-[70vh]">
-                        <iframe
-                            src={'/KODE_ETIK_MANAJER_INVESTASI_PT_ONEWAY_INDONESIA111.pdf'}
-                            title="PDF Preview"
-                            className="h-full w-full rounded-lg shadow"
-                        />
-                    </div>
-
-                    <div className="mt-8">
-                        <iframe
-                            scrolling="no"
-                            allowTransparency="true"
-                            frameBorder={0}
-                            src="https://www.tradingview-widget.com/embed-widget/ticker-tape/?locale=id#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22OANDA%3ASPX500USD%22%2C%22title%22%3A%22S%26P%20500%22%7D%2C%7B%22proName%22%3A%22OANDA%3ANAS100USD%22%2C%22title%22%3A%22Nasdaq%20100%22%7D%2C%7B%22proName%22%3A%22FX_IDC%3AEURUSD%22%2C%22title%22%3A%22EUR%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22BTC%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22ETH%2FUSD%22%7D%5D%2C%22colorTheme%22%3A%22light%22%2C%22isTransparent%22%3Afalse%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A78%2C%22utm_source%22%3A%22www.dhervainvestindo.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22ticker-tape%22%2C%22page-uri%22%3A%22www.dhervainvestindo.com%2Fp%2Foffice.html%22%7D"
-                            title="ticker tape TradingView widget"
-                            lang="en"
-                            style={{
-                                userSelect: 'none',
-                                boxSizing: 'border-box',
-                                display: 'block',
-                                height: 46,
-                                width: '100%'
-                            }}
-                        />
+                                <div className="mb-4 flex items-center">
+                                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-100">
+                                        <span className="text-sm font-bold text-blue-700">{index + 1}</span>
+                                    </div>
+                                    <h3 className="ml-3 text-xl font-semibold text-slate-800">{principle.title}</h3>
+                                </div>
+                                <p className="leading-relaxed text-slate-600">{principle.description}</p>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </div>

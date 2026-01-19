@@ -6,57 +6,88 @@ export default function Profile() {
     return (
         <>
             <Head>
-                <title>Tentang - PT Dherva Investindo</title>
-                <meta name="description" content="Profil PT Dherva Investindo — visi, misi, dan pengalaman manajer investasi sejak 1999." />
-                <meta name="keywords" content="Dherva Investindo, profil, visi, misi, pengalaman" />
+                <title>Tentang Luno Malaysia - Bursa Aset Digital Terawal di Malaysia</title>
+                <meta
+                    name="description"
+                    content="Ketahui lebih lanjut tentang Luno Malaysia, Bursa Aset Digital (DAX) pertama yang dikawal selia oleh Suruhanjaya Sekuriti Malaysia. Platform selamat untuk membeli, menjual, dan menyimpan mata wang kripto seperti Bitcoin."
+                />
+                <meta
+                    name="keywords"
+                    content="Luno Malaysia, Bursa Aset Digital, DAX, mata wang kripto, Bitcoin, Ethereum, Suruhanjaya Sekuriti Malaysia, pelaburan kripto"
+                />
                 <meta name="robots" content="index,follow" />
             </Head>
 
             <div className="bg-gradient-to-b from-white to-slate-50 py-12">
                 <div className="mx-auto max-w-5xl px-4">
-                    <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
-                        <motion.div initial={{ x: -10, opacity: 0 }} animate={{ x: 0, opacity: 1 }} className="h-1/2 w-full lg:w-1/3">
-                            <img src="/image/PROFILE.jpg" alt="Profile" className="h-full rounded-xl object-cover shadow-lg" />
+                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12 text-center">
+                        <h1 className="mb-4 text-4xl font-bold text-blue-700">Tentang Luno Malaysia Sdn Bhd</h1>
+                        <p className="text-lg text-slate-600">Entiti Tempatan untuk Platform Pertukaran Mata Wang Kripto Global</p>
+                    </motion.div>
+
+                    <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:items-center">
+                        <motion.div initial={{ x: -10, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.1 }}>
+                            <img src="/image/luno.jpg" alt="Luno Malaysia" className="h-80 w-full rounded-xl object-cover shadow-lg" />
                         </motion.div>
 
-                        <div className="w-full lg:w-2/3">
-                            <motion.h1 initial={{ y: -6 }} animate={{ y: 0 }} className="text-4xl font-bold text-emerald-700">
-                                Tentang PT Dherva Investindo
-                            </motion.h1>
-                            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.08 }} className="mt-3 text-slate-700">
-                                PT Dherva Investindo adalah manajer investasi yang menyediakan solusi investasi profesional sejak 1999. Kami berfokus
-                                pada pencapaian tujuan investasi nasabah melalui strategi yang disiplin, integritas, dan tim berpengalaman.
-                            </motion.p>
+                        <motion.div initial={{ x: 10, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="space-y-6">
+                            <p className="leading-relaxed text-slate-700">
+                                Luno Malaysia Sdn Bhd merupakan entiti tempatan bagi platform pertukaran mata wang kripto global, Luno. Syarikat ini
+                                beroperasi sebagai Bursa Aset Digital (DAX) yang dikawal selia oleh Suruhanjaya Sekuriti Malaysia, serta menyediakan
+                                platform yang selamat dan boleh dipercayai untuk membeli, menjual dan menyimpan mata wang kripto di Malaysia.
+                            </p>
+                            <p className="leading-relaxed text-slate-700">
+                                Luno Malaysia menawarkan perkhidmatan sepenuhnya secara digital tanpa menyediakan sokongan bersemuka di pejabat.
+                                Platform ini dikenali kerana kemudahan penggunaan, tahap keselamatan yang tinggi dan sokongan pelanggan melalui
+                                saluran digital. Luno Malaysia Sdn Bhd mempunyai pejabat di Petaling Jaya, Selangor, namun semua urusan sokongan
+                                pelanggan dikendalikan secara dalam talian.
+                            </p>
+                        </motion.div>
+                    </div>
 
-                            <div className="mt-6 grid gap-4 sm:grid-cols-3">
-                                <div className="rounded-lg bg-gradient-to-br from-emerald-50 to-white p-4 text-center shadow">
-                                    <div className="text-2xl font-bold text-emerald-700">1999</div>
-                                    <div className="text-sm text-slate-500">Berdiri</div>
-                                </div>
-                                <div className="rounded-lg bg-gradient-to-br from-orange-50 to-white p-4 text-center shadow">
-                                    <div className="text-2xl font-bold text-orange-700">15+</div>
-                                    <div className="text-sm text-slate-500">Tahun Pengalaman</div>
-                                </div>
-                                <div className="rounded-lg bg-gradient-to-br from-emerald-50 to-white p-4 text-center shadow">
-                                    <div className="text-2xl font-bold text-emerald-600">Discretionary</div>
-                                    <div className="text-sm text-slate-500">Pengelolaan Dana</div>
-                                </div>
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="mt-8">
+                        <h2 className="mb-6 text-2xl font-semibold text-blue-700">Butiran Perusahaan</h2>
+                        <div className="grid gap-6 md:grid-cols-2">
+                            <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-md">
+                                <h3 className="mb-2 text-lg font-medium text-slate-800">Jenis Syarikat</h3>
+                                <p className="text-slate-600">Pertukaran Aset Digital (DAX) / Platform Pengurusan Mata Wang Kripto.</p>
                             </div>
-
-                            <div className="mt-6 space-y-4">
-                                <div>
-                                    <h4 className="text-lg font-semibold text-emerald-700">Visi</h4>
-                                    <p className="text-sm text-slate-600">Menjadi pilihan utama nasabah sebagai pengelola investasi terpercaya.</p>
-                                </div>
-                                <div>
-                                    <h4 className="text-lg font-semibold text-orange-700">Misi</h4>
-                                    <p className="text-sm text-slate-600">
-                                        Memberikan hasil investasi yang optimal dengan integritas dan kehati-hatian.
-                                    </p>
-                                </div>
+                            <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-md">
+                                <h3 className="mb-2 text-lg font-medium text-slate-800">Peraturan</h3>
+                                <p className="text-slate-600">
+                                    Diiktiraf sebagai Pengendali Pasaran Diiktiraf (RMO-DAX) oleh Suruhanjaya Sekuriti Malaysia.
+                                </p>
+                            </div>
+                            <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-md">
+                                <h3 className="mb-2 text-lg font-medium text-slate-800">Perkhidmatan</h3>
+                                <p className="text-slate-600">
+                                    Membolehkan pengguna membeli, menjual, melabur dan mempelajari tentang mata wang kripto seperti Bitcoin melalui
+                                    website rasmi yang intuitif dan selamat.
+                                </p>
+                            </div>
+                            <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-md">
+                                <h3 className="mb-2 text-lg font-medium text-slate-800">Pejabat</h3>
+                                <p className="text-slate-600">
+                                    Aras 16 & 17, Menara Nukleus, Mutiara Damansara, Petaling Jaya, Selangor, Malaysia, tetapi tidak menyediakan
+                                    sokongan pakar di tapak.
+                                </p>
+                            </div>
+                            <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-md">
+                                <h3 className="mb-2 text-lg font-medium text-slate-800">Keselamatan</h3>
+                                <p className="text-slate-600">
+                                    Menekankan keselamatan berbilang lapisan dan pensijilan standard antarabangsa (ISO/IEC 27001:2022, dsb.).
+                                </p>
+                            </div>
+                            <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-md">
+                                <h3 className="mb-2 text-lg font-medium text-slate-800">Maklumat Tambahan</h3>
+                                <p className="text-slate-600">
+                                    Luno Malaysia terlibat dalam kes undang-undang yang penting berkenaan liabiliti platform kripto, menunjukkan
+                                    landskap kawal selia dan undang-undang yang berkembang dalam sektor ini. Syarikat itu adalah sebahagian daripada
+                                    kumpulan Luno yang lebih besar dengan operasi di negara seperti UK, Afrika Selatan, Indonesia dan Australia.
+                                </p>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     <div className="mt-10">
                         <iframe

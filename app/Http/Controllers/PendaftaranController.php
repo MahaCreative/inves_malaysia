@@ -38,7 +38,7 @@ class PendaftaranController extends Controller
             'email'            => 'required|email',
             'no_telp'          => 'required|numeric|min_digits:11',
             'modal_investasi' => 'required|numeric|min_digits:5',
-            'jenis_kelamin'    => 'required|in:Laki-laki,Perempuan',
+            'jenis_kelamin'    => 'required',
             'provinsi'         => 'nullable|string|max:100',
             'kota'             => 'nullable|string|max:100',
             'alamat_lengkap'   => 'nullable|string',

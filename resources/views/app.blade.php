@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title inertia>{{ config('app.name', 'PT. Dherva Investindo') }}</title>
+    <title inertia>{{ config('app.name', 'Luno Malaysia') }}</title>
 
     {{-- Default SEO metas (can be overridden by page via Inertia Head) --}}
     <meta name="description" content="{{ $page['props']['seo']['description'] ?? config('app.description', '') }}">
@@ -25,9 +25,9 @@
     <meta name="twitter:description" content="{{ $page['props']['seo']['description'] ?? config('app.description', '') }}" />
     <meta name="twitter:image" content="{{ $page['props']['seo']['image'] ?? asset('image/LOGO PNG.png') }}" />
 
-    <link rel="icon" href="image/favicon.ico" sizes="any">
+    <link rel="icon" href="https://framerusercontent.com/images/cjRb5SvO4mNBEEI1MlFlwYBoJEg.png" sizes="any">
 
-    <link rel="apple-touch-icon" href="image/apple-touch-icon.png">
+    <link href="https://framerusercontent.com/images/cjRb5SvO4mNBEEI1MlFlwYBoJEg.png" rel="icon" media="(prefers-color-scheme: dark)">
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />

@@ -14,24 +14,27 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Home - PT Dherva Investindo</title>
+                <title>Laman Utama - Luno Malaysia</title>
                 <meta
                     name="description"
-                    content="PT Dherva Investindo — platform investasi terpercaya untuk trading forex dengan profit bertahap dan diawasi OJK."
+                    content="Luno Malaysia — platform pelaburan yang dipercayai untuk perdagangan forex dengan keuntungan bertahap dan diawasi oleh Suruhanjaya Sekuriti Malaysia."
                 />
-                <meta name="keywords" content="Dherva Investindo, investasi, trading forex, manajer investasi, OJK" />
+                <meta name="keywords" content="Luno Malaysia, pelaburan, perdagangan forex, pengurus pelaburan, Suruhanjaya Sekuriti Malaysia" />
                 <meta name="robots" content="index,follow" />
-                <meta property="og:title" content="PT Dherva Investindo - Investasi Cerdas" />
-                <meta property="og:description" content="Platform investasi terpercaya, profit bertahap, aman dan diawasi OJK." />
+                <meta property="og:title" content="Luno Malaysia - Pelaburan Pintar" />
+                <meta
+                    property="og:description"
+                    content="Platform pelaburan yang dipercayai, keuntungan bertahap, selamat dan diawasi oleh Suruhanjaya Sekuriti Malaysia."
+                />
                 <meta property="og:image" content="/image/LOGO PNG.png" />
             </Head>
 
             <div className="space-y-12">
                 {/* Hero Section */}
                 <div className="mb-12 text-center text-blue-800">
-                    <h1 className="mb-4 font-oswald text-xl font-bold text-white md:text-3xl">Investasi Cerdas untuk Masa Depan Cerah</h1>
+                    <h1 className="mb-4 font-oswald text-xl font-bold text-white md:text-3xl">Pelaburan Pintar untuk Masa Depan Cerah</h1>
                     <p className="mx-auto mb-8 max-w-2xl font-domine text-sm text-blue-700 text-white md:text-xl">
-                        Platform investasi terpercaya dengan profit yang kompetitif dan sistem keamanan tingkat bank
+                        Platform pelaburan yang dipercayai dengan keuntungan yang kompetitif dan sistem keselamatan tahap bank
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link href={`${referal_code}/pendaftaran-member`}>
@@ -41,14 +44,14 @@ export default function Home() {
                         </Link>
                         <Link href={`${referal_code}/paket-trading`}>
                             <Button variant="outline" size="lg" className="border-blue-200 text-white hover:bg-blue-500">
-                                <MuiIcon name="chart" className="mr-2 inline-block" /> Lihat Paket
+                                <MuiIcon name="chart" className="mr-2 inline-block" /> Lihat Pakej
                             </Button>
                         </Link>
                     </div>
                 </div>
 
                 {/* Promotional Content */}
-                <Card title="Presentasi Platform" className="w-full" icon={<MuiIcon name="movie" />}>
+                <Card title="Persembahan Platform" className="w-full" icon={<MuiIcon name="movie" />}>
                     <iframe
                         scrolling="no"
                         allowTransparency="true"
@@ -66,13 +69,46 @@ export default function Home() {
                     />
 
                     <div className="relative w-full" style={{ paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
-                        <iframe
-                            className="absolute inset-0 h-full w-full rounded-lg border-none outline-none"
-                            loading="lazy"
-                            allow="fullscreen"
-                            allowFullScreen={true}
-                            src="https://www.canva.com/design/DAG8uWqDuTY/FWuWqoti01g-C_4_RRL8dg/view?embed"
-                        />
+                        <div
+                            style={{
+                                position: 'relative',
+                                width: '100%',
+                                height: 0,
+                                paddingTop: '56.2500%',
+                                paddingBottom: 0,
+                                boxShadow: '0 2px 8px 0 rgba(63,69,81,0.16)',
+                                marginTop: '1.6em',
+                                marginBottom: '0.9em',
+                                overflow: 'hidden',
+                                borderRadius: 8,
+                                willChange: 'transform'
+                            }}
+                        >
+                            <iframe
+                                loading="lazy"
+                                style={{
+                                    position: 'absolute',
+                                    width: '100%',
+                                    height: '100%',
+                                    top: 0,
+                                    left: 0,
+                                    border: 'none',
+                                    padding: 0,
+                                    margin: 0
+                                }}
+                                src="https://www.canva.com/design/DAG-1Df0wMg/-LjRPvVuvkU1QDF_BGUqng/view?embed"
+                                allowFullScreen="allowfullscreen"
+                                allow="fullscreen"
+                            />
+                        </div>
+                        <a
+                            href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAG-1Df0wMg&#x2F;-LjRPvVuvkU1QDF_BGUqng&#x2F;view?utm_content=DAG-1Df0wMg&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Salinan dari Red and Black Geometric Investment Presentation
+                        </a>{' '}
+                        oleh Guntur Madjid
                     </div>
                 </Card>
 
@@ -121,19 +157,23 @@ export default function Home() {
                             <div className="absolute bottom-0 -left-32 h-80 w-80 rounded-full bg-blue-200/30 blur-3xl" />
 
                             <h1 className="font-oswald text-base leading-tight font-bold text-blue-800 md:text-2xl md:text-5xl">
-                                BISNIS TRADING DENGAN PROFIT BERJENJANG
+                                PERNIAGAAN PERDAGANGAN DENGAN KEUNTUNGAN BERJENJANG
                                 <br />
-                                DAN BERANI TAMPIL BEDA
+                                DAN BERANI TAMPIL BERBEZA
                             </h1>
 
                             <div className="mt-6 max-w-4xl space-y-4 font-domine text-sm leading-relaxed text-blue-700 md:text-xl">
                                 <p>
-                                    <strong>PT. Dherva Investindo</strong> mempersembahkan layanan bisnis trading yang mudah, aman, dan terpercaya.
-                                    Anda hanya menunggu hasil sesuai sistem bagi hasil yang telah ditetapkan.
+                                    Luno Malaysia Sdn Bhd menyediakan platform pertukaran aset digital yang selamat, mudah digunakan dan dipercayai
+                                    untuk membeli, menjual serta menyimpan mata wang kripto. Sebagai Bursa Aset Digital (DAX) yang dikawal selia oleh
+                                    Suruhanjaya Sekuriti Malaysia, Luno komited untuk menyediakan pengalaman pelaburan aset digital yang telus dan
+                                    berintegriti.
                                 </p>
                                 <p>
-                                    PT. Dherva Investindo menjalankan usahanya secara mandiri dan terpisah sebagai perusahaan manajer trading yang
-                                    profesional dan inovatif. Visi kami adalah menjadi perusahaan manajer trading terkemuka di pasar regional.
+                                    Luno Malaysia beroperasi sepenuhnya secara digital dengan sokongan pelanggan melalui saluran dalam talian. Dengan
+                                    penekanan terhadap keselamatan berbilang lapisan, pematuhan peraturan dan pendidikan pengguna, Luno berhasrat
+                                    untuk memperkasa rakyat Malaysia dalam memahami serta mengakses ekosistem kewangan digital secara
+                                    bertanggungjawab.
                                 </p>
                             </div>
                         </motion.div>
@@ -142,17 +182,17 @@ export default function Home() {
                         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                             {[
                                 {
-                                    title: 'Profit Bertahap',
-                                    desc: 'Pencairan profit dilakukan secara bertahap setiap 2 jam.',
+                                    title: 'Keuntungan Bertahap',
+                                    desc: 'Pencairan keuntungan dilakukan secara bertahap setiap 2 jam.',
                                     icon: 'timer'
                                 },
                                 {
-                                    title: 'Modal Aman',
-                                    desc: 'Modal kembali bersamaan dengan profit pada akhir kontrak.',
+                                    title: 'Modal Selamat',
+                                    desc: 'Modal kembali bersamaan dengan keuntungan pada akhir kontrak.',
                                     icon: 'wallet'
                                 },
                                 {
-                                    title: 'Pencairan Tepat Waktu',
+                                    title: 'Pencairan Tepat Pada Masa',
                                     desc: 'Proses pencairan cepat sesuai waktu yang telah ditentukan.',
                                     icon: 'bolt'
                                 }
@@ -179,7 +219,7 @@ export default function Home() {
                         {/* ================= SKEMA ================= */}
                         <Card
                             title="Skema Pencairan"
-                            subtitle="Sistem pencairan profit setiap paket trading"
+                            subtitle="Sistem pencairan keuntungan setiap pakej perdagangan"
                             className="rounded-3xl shadow-[0_30px_90px_rgba(0,0,0,0.3)]"
                         >
                             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -208,15 +248,15 @@ export default function Home() {
                                             <div className="mt-4 space-y-3 font-domine text-base text-blue-700 md:text-xl">
                                                 <div className="flex items-center gap-2">
                                                     <MuiIcon fontSize="large" name="trending" className="text-lg text-orange-500 md:text-2xl" />
-                                                    Profit {p.profit} per 2 jam
+                                                    Keuntungan {p.profit} per 2 jam
                                                 </div>
                                                 <div className="flex items-center gap-2">
                                                     <MuiIcon fontSize="large" name="repeat" className="text-lg text-orange-600 md:text-2xl" />
-                                                    Maksimal 3 kali pencairan
+                                                    Maksimum 3 kali pencairan
                                                 </div>
                                                 <div className="flex items-center gap-2">
                                                     <MuiIcon fontSize="large" name="wallet" className="text-lg text-orange-700 md:text-2xl" />
-                                                    Modal & profit cair di akhir kontrak
+                                                    Modal & keuntungan cair di akhir kontrak
                                                 </div>
                                             </div>
                                         </div>
@@ -237,23 +277,23 @@ export default function Home() {
                             <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-orange-400/30 blur-3xl" />
 
                             <p className="max-w-3xl font-domine text-base leading-relaxed md:text-xl">
-                                <strong>Segera Join</strong> bersama PT Dherva Investindo Trading Forex penghasil uang. Anda hanya melakukan deposit
-                                dan menunggu per 2 jam penghasilan masuk secara instan ke rekening Anda tanpa melakukan aktivitas apapun.
+                                <strong>Sertai Segera</strong> bersama Luno Malaysia Perdagangan Forex penghasil wang. Anda hanya melakukan deposit
+                                dan menunggu per 2 jam pendapatan masuk secara instan ke akaun Anda tanpa melakukan aktiviti apa pun.
                             </p>
 
                             <div className="mt-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                                 <div className="flex items-center gap-3">
                                     <MuiIcon name="shield" className="text-lg text-orange-400 md:text-2xl" />
                                     <div>
-                                        <p className="font-semibold">Terdaftar dan diawasi oleh</p>
-                                        <p className="text-lg font-bold">OJK – Otoritas Jasa Keuangan</p>
+                                        <p className="font-semibold">Berdaftar dan diawasi oleh</p>
+                                        <p className="text-lg font-bold">Suruhanjaya Sekuriti Malaysia</p>
                                     </div>
                                 </div>
 
                                 <div className="rounded-xl bg-blue-900 px-6 py-3 text-center font-oswald text-xs font-bold text-orange-500 shadow-lg md:text-base">
                                     SEMAKIN BESAR MODAL ANDA
                                     <br />
-                                    SEMAKIN BESAR PROFIT ANDA TERIMA
+                                    SEMAKIN BESAR KEUNTUNGAN ANDA TERIMA
                                 </div>
                             </div>
                         </motion.div>
@@ -282,33 +322,33 @@ export default function Home() {
                         {[
                             {
                                 icon: 'trophy',
-                                title: 'Terpercaya',
-                                desc: 'Terdaftar dan diawasi oleh lembaga keuangan resmi Indonesia'
+                                title: 'Dipercayai',
+                                desc: 'Berdaftar dan diawasi oleh lembaga kewangan rasmi Malaysia'
                             },
                             {
                                 icon: 'money',
-                                title: 'Profit Tinggi',
-                                desc: 'Return investasi yang kompetitif dan transparan'
+                                title: 'Keuntungan Tinggi',
+                                desc: 'Pulangan pelaburan yang kompetitif dan telus'
                             },
                             {
                                 icon: 'security',
-                                title: 'Aman',
-                                desc: 'Sistem keamanan berlapis dengan enkripsi tingkat bank'
+                                title: 'Selamat',
+                                desc: 'Sistem keselamatan berlapis dengan penyulitan tahap bank'
                             },
                             {
                                 icon: 'bolt',
                                 title: 'Cepat',
-                                desc: 'Proses deposit dan penarikan dalam hitungan menit'
+                                desc: 'Proses deposit dan pengeluaran dalam hitungan minit'
                             },
                             {
                                 icon: 'phone',
-                                title: 'Support Profesional',
-                                desc: 'Tim customer service siap membantu 24 jam setiap hari'
+                                title: 'Sokongan Profesional',
+                                desc: 'Pasukan perkhidmatan pelanggan sedia membantu 24 jam sehari'
                             },
                             {
                                 icon: 'trending',
-                                title: 'Transparan',
-                                desc: 'Laporan lengkap dan real-time untuk setiap transaksi Anda'
+                                title: 'Telus',
+                                desc: 'Laporan lengkap dan masa nyata untuk setiap transaksi anda'
                             }
                         ].map((item, index) => (
                             <Card key={index} className="bg-white">
@@ -326,13 +366,13 @@ export default function Home() {
 
                 {/* Final CTA */}
                 <div className="rounded-xl bg-orange-100 p-8 text-center text-blue-800">
-                    <h2 className="mb-3 font-oswald text-base font-bold md:text-xl">Siap Memulai Investasi Anda?</h2>
+                    <h2 className="mb-3 font-oswald text-base font-bold md:text-xl">Bersedia Memulakan Pelaburan Anda?</h2>
                     <p className="mb-6 font-domine text-xs md:text-base">
-                        Bergabunglah dengan ribuan investor sukses dan raih keuntungan konsisten bersama kami
+                        Sertailah bersama ribuan pelabur berjaya dan raih keuntungan konsisten bersama kami
                     </p>
                     <Link href={`${referal_code}/pendaftaran-member`}>
                         <Button variant="secondary" size="lg" className="bg-white hover:bg-blue-500">
-                            💎 Daftar Sekarang - Gratis
+                            💎 Daftar Sekarang - Percuma
                         </Button>
                     </Link>
                 </div>

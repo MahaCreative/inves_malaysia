@@ -6,16 +6,16 @@ import MuiIcon from '../components/MuiIcon';
 
 export default function PaketTrading() {
     const packages = [
-        { name: 'Paket Standar', icon: 'chart', color: 'bg-blue-600' },
-        { name: 'Paket Premium', icon: 'star', color: 'bg-blue-500' },
-        { name: 'Paket Eksklusif', icon: 'trophy', color: 'bg-orange-500' }
+        { name: 'Pakej Standard', icon: 'chart', color: 'bg-blue-600' },
+        { name: 'Pakej Premium', icon: 'star', color: 'bg-blue-500' },
+        { name: 'Pakej Eksklusif', icon: 'trophy', color: 'bg-blue-500' }
     ];
 
     const paketList = [
         {
             kode: 'A',
-            title: 'PAKET A',
-            subtitle: 'Entry Level Trading',
+            title: 'PAKEJ A',
+            subtitle: 'Tahap Permulaan Perdagangan',
             gradient: 'bg-blue-700',
             modal: 'Rp500.000 – Rp5.000.000',
             profitPer2Jam: '15%',
@@ -24,20 +24,20 @@ export default function PaketTrading() {
             contohProfit: 'Rp75.000',
             totalKeuntungan: 'Rp225.000',
             akhirKontrak: 'Rp575.000',
-            rincian: ['Pencairan profit pertama 15%', 'Pencairan profit kedua 15%', 'Pencairan profit ketiga 15% + Modal Anda'],
+            rincian: ['Pengeluaran keuntungan pertama 15%', 'Pengeluaran keuntungan kedua 15%', 'Pengeluaran keuntungan ketiga 15% + Modal Anda'],
             paragraf: (
                 <>
-                    Contoh jika modal trading <strong>PAKET A</strong> Rp500.000, proses pencairan profitnya yaitu 2 jam kemudian mendapatkan profit
-                    15% (Rp75.000) dan 2 jam berikutnya mendapatkan lagi profit 15% (Rp75.000) dan 2 jam lagi berikutnya kontrak anda berakhir dan di
-                    akhir kontrak modal dan profit yang ketiga dicairkan bersamaan yaitu Rp575.000. Jadi total keuntungan selama 6 jam atau selama
-                    masa kontrak dengan modal Rp500.000 adalah Rp225.000.
+                    Contoh jika modal perdagangan <strong>PAKEJ A</strong> Rp500.000, proses pengeluaran keuntungannya iaitu 2 jam kemudian
+                    mendapatkan keuntungan 15% (Rp75.000) dan 2 jam berikutnya mendapatkan lagi keuntungan 15% (Rp75.000) dan 2 jam lagi berikutnya
+                    kontrak anda berakhir dan di akhir kontrak modal dan keuntungan yang ketiga dikeluarkan bersamaan iaitu Rp575.000. Jadi jumlah
+                    keuntungan selama 6 jam atau selama masa kontrak dengan modal Rp500.000 adalah Rp225.000.
                 </>
             )
         },
         {
             kode: 'B',
-            title: 'PAKET B',
-            subtitle: 'Professional Trading',
+            title: 'PAKEJ B',
+            subtitle: 'Profesional Perdagangan',
             gradient: 'bg-blue-600',
             modal: 'Rp5.000.000 – Rp50.000.000',
             profitPer2Jam: '20%',
@@ -46,21 +46,21 @@ export default function PaketTrading() {
             contohProfit: 'Rp1.000.000',
             totalKeuntungan: 'Rp3.000.000',
             akhirKontrak: 'Rp6.000.000',
-            rincian: ['Pencairan profit pertama 20%', 'Pencairan profit kedua 20%', 'Pencairan profit ketiga 20% + Modal Anda'],
+            rincian: ['Pengeluaran keuntungan pertama 20%', 'Pengeluaran keuntungan kedua 20%', 'Pengeluaran keuntungan ketiga 20% + Modal Anda'],
             paragraf: (
                 <>
-                    Contoh jika modal trading <strong>PAKET B</strong> Rp5.000.000, proses pencairan profitnya yaitu 2 jam kemudian mendapatkan profit
-                    20% (Rp1.000.000) dan 2 jam berikutnya mendapatkan lagi profit 20% (Rp1.000.000) dan 2 jam lagi berikutnya kontrak anda berakhir
-                    dan di akhir kontrak modal dan profit yang ketiga dicairkan bersamaan yaitu Rp6.000.000. Jadi total keuntungan selama 6 jam atau
-                    selama masa kontrak dengan modal Rp5.000.000 adalah Rp3.000.000.
+                    Contoh jika modal perdagangan <strong>PAKEJ B</strong> Rp5.000.000, proses pengeluaran keuntungannya iaitu 2 jam kemudian
+                    mendapatkan keuntungan 20% (Rp1.000.000) dan 2 jam berikutnya mendapatkan lagi keuntungan 20% (Rp1.000.000) dan 2 jam lagi
+                    berikutnya kontrak anda berakhir dan di akhir kontrak modal dan keuntungan yang ketiga dikeluarkan bersamaan iaitu Rp6.000.000.
+                    Jadi jumlah keuntungan selama 6 jam atau selama masa kontrak dengan modal Rp5.000.000 adalah Rp3.000.000.
                 </>
             )
         },
         {
             kode: 'C',
-            title: 'PAKET C',
-            subtitle: 'Premium Trading',
-            gradient: 'bg-orange-600',
+            title: 'PAKEJ C',
+            subtitle: 'Premium Perdagangan',
+            gradient: 'bg-blue-600',
             modal: 'Rp50.000.000 – Rp500.000.000',
             profitPer2Jam: '25%',
             totalProfit: '75%',
@@ -68,21 +68,21 @@ export default function PaketTrading() {
             contohProfit: 'Rp12.500.000',
             totalKeuntungan: 'Rp37.500.000',
             akhirKontrak: 'Rp87.500.000',
-            rincian: ['Pencairan profit pertama 25%', 'Pencairan profit kedua 25%', 'Pencairan profit ketiga 25% + Modal Anda'],
+            rincian: ['Pengeluaran keuntungan pertama 25%', 'Pengeluaran keuntungan kedua 25%', 'Pengeluaran keuntungan ketiga 25% + Modal Anda'],
             paragraf: (
                 <>
-                    Contoh jika modal trading <strong>PAKET C</strong> Rp50.000.000, proses pencairan profitnya yaitu 2 jam kemudian mendapatkan
-                    profit 25% (Rp12.500.000) dan 2 jam berikutnya mendapatkan lagi profit 25% (Rp12.500.000) dan 2 jam lagi berikutnya kontrak anda
-                    berakhir dan di akhir kontrak modal dan profit yang ketiga dicairkan bersamaan yaitu Rp87.500.000. Jadi total keuntungan selama 6
-                    jam atau selama masa kontrak dengan modal Rp50.000.000 adalah Rp37.500.000.
+                    Contoh jika modal perdagangan <strong>PAKEJ C</strong> Rp50.000.000, proses pengeluaran keuntungannya iaitu 2 jam kemudian
+                    mendapatkan keuntungan 25% (Rp12.500.000) dan 2 jam berikutnya mendapatkan lagi keuntungan 25% (Rp12.500.000) dan 2 jam lagi
+                    berikutnya kontrak anda berakhir dan di akhir kontrak modal dan keuntungan yang ketiga dikeluarkan bersamaan iaitu Rp87.500.000.
+                    Jadi jumlah keuntungan selama 6 jam atau selama masa kontrak dengan modal Rp50.000.000 adalah Rp37.500.000.
                 </>
             )
         },
         {
             kode: 'D',
-            title: 'PAKET D',
-            subtitle: 'Exclusive Trading',
-            gradient: 'bg-orange-700',
+            title: 'PAKEJ D',
+            subtitle: 'Eksklusif Perdagangan',
+            gradient: 'bg-blue-700',
             modal: 'Rp500.000.000 – Unlimited',
             profitPer2Jam: '30%',
             totalProfit: '90%',
@@ -90,13 +90,13 @@ export default function PaketTrading() {
             contohProfit: 'Rp150.000.000',
             totalKeuntungan: 'Rp450.000.000',
             akhirKontrak: 'Rp950.000.000',
-            rincian: ['Pencairan profit pertama 30%', 'Pencairan profit kedua 30%', 'Pencairan profit ketiga 30% + Modal Anda'],
+            rincian: ['Pengeluaran keuntungan pertama 30%', 'Pengeluaran keuntungan kedua 30%', 'Pengeluaran keuntungan ketiga 30% + Modal Anda'],
             paragraf: (
                 <>
-                    Contoh jika modal trading <strong>PAKET D</strong> Rp500.000.000, proses pencairan profitnya yaitu 2 jam kemudian mendapatkan
-                    profit 30% (Rp150.000.000) dan 2 jam berikutnya mendapatkan lagi profit 30% (Rp150.000.000) dan 2 jam lagi berikutnya kontrak anda
-                    berakhir dan di akhir kontrak modal dan profit yang ketiga dicairkan bersamaan yaitu Rp950.000.000. Jadi total keuntungan selama 6
-                    jam atau selama masa kontrak dengan modal Rp500.000.000 adalah Rp450.000.000.
+                    Contoh jika modal perdagangan <strong>PAKEJ D</strong> Rp500.000.000, proses pengeluaran keuntungannya iaitu 2 jam kemudian
+                    mendapatkan keuntungan 30% (Rp150.000.000) dan 2 jam berikutnya mendapatkan lagi keuntungan 30% (Rp150.000.000) dan 2 jam lagi
+                    berikutnya kontrak anda berakhir dan di akhir kontrak modal dan keuntungan yang ketiga dikeluarkan bersamaan iaitu Rp950.000.000.
+                    Jadi jumlah keuntungan selama 6 jam atau selama masa kontrak dengan modal Rp500.000.000 adalah Rp450.000.000.
                 </>
             )
         }
@@ -106,19 +106,25 @@ export default function PaketTrading() {
     return (
         <>
             <Head>
-                <title>Paket Trading - PT Dherva Investindo</title>
-                <meta name="description" content="Lihat pilihan paket trading kami: Paket A, B, C, D dengan simulasi profit dan rincian pencairan." />
-                <meta name="keywords" content="paket trading, investasi, dherva investindo, profit, paket investasi" />
+                <title>Pakej Perdagangan - Luno Malaysia</title>
+                <meta
+                    name="description"
+                    content="Lihat pilihan pakej perdagangan kami: Pakej A, B, C, D dengan simulasi keuntungan dan butiran pengeluaran."
+                />
+                <meta name="keywords" content="pakej perdagangan, pelaburan, luno malaysia, keuntungan, pakej pelaburan" />
                 <meta name="robots" content="index,follow" />
-                <meta property="og:title" content="Paket Trading - PT Dherva Investindo" />
-                <meta property="og:description" content="Pilih paket trading yang sesuai: Paket A, B, C, D. Simulasi profit dan rincian pencairan." />
+                <meta property="og:title" content="Pakej Perdagangan - Luno Malaysia" />
+                <meta
+                    property="og:description"
+                    content="Pilih pakej perdagangan yang sesuai: Pakej A, B, C, D. Simulasi keuntungan dan butiran pengeluaran."
+                />
                 <meta property="og:image" content="/image/LOGO PNG.png" />
                 <meta property="og:type" content="website" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Paket Trading - PT Dherva Investindo" />
+                <meta name="twitter:title" content="Pakej Perdagangan - Luno Malaysia" />
                 <meta
                     name="twitter:description"
-                    content="Pilih paket trading yang sesuai: Paket A, B, C, D. Simulasi profit dan rincian pencairan."
+                    content="Pilih pakej perdagangan yang sesuai: Pakej A, B, C, D. Simulasi keuntungan dan butiran pengeluaran."
                 />
                 <meta name="twitter:image" content="/image/LOGO PNG.png" />
             </Head>
@@ -127,10 +133,10 @@ export default function PaketTrading() {
                 {/* Header */}
                 <div className="text-center">
                     <h1 className="mb-3 text-lg font-bold text-white md:text-2xl" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700 }}>
-                        <MuiIcon name="trending" className="mr-3 inline-block align-middle" /> PAKET TRADING
+                        <MuiIcon name="trending" className="mr-3 inline-block align-middle" /> PAKEJ PERDAGANGAN
                     </h1>
                     <p className="text-sm text-gray-200 md:text-base" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}>
-                        Pilih paket trading yang sesuai dengan profil dan kebutuhan investasi Anda
+                        Pilih pakej perdagangan yang sesuai dengan profil dan keperluan pelaburan anda
                     </p>
                 </div>
                 {/* Packages Grid */}
@@ -138,17 +144,17 @@ export default function PaketTrading() {
                     {packages.map((pkg, index) => (
                         <Card key={index} className={`bg-gradient-to-br ${pkg.color}`}>
                             <div className="space-y-4 text-blue-900">
-                                <div className="text-2xl text-orange-500 md:text-5xl">
+                                <div className="text-2xl text-blue-500 md:text-5xl">
                                     <MuiIcon name={pkg.icon} fontSize="inherit" />
                                 </div>
                                 <h2 className="font-oswald text-sm font-bold md:text-xl">{pkg.name}</h2>
-                                <p className="font-domine text-xs text-blue-950 md:text-base">Paket trading dengan keuntungan kompetitif</p>
+                                <p className="font-domine text-xs text-blue-950 md:text-base">Pakej perdagangan dengan keuntungan kompetitif</p>
                             </div>
                         </Card>
                     ))}
                 </div>
                 {/* Main Chart */}
-                <Card title="Grafik Analisis Pasar" subtitle="Trading chart real-time untuk instrumen AAPL" icon={<MuiIcon name="chart" />}>
+                <Card title="Carta Analisis Pasaran" subtitle="Carta perdagangan masa nyata untuk instrumen AAPL" icon={<MuiIcon name="chart" />}>
                     <iframe
                         scrolling="no"
                         allowTransparency="true"
@@ -185,17 +191,17 @@ export default function PaketTrading() {
                     </div>
                 </Card>
                 {/* Features */}
-                <Card title="✨ Fitur Unggulan">
+                <Card title="✨ Ciri-ciri Utama">
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                         {[
-                            { icon: 'security', title: 'Keamanan Terjamin', desc: 'Data dan dana Anda dilindungi dengan enkripsi tingkat bank' },
-                            { icon: 'phone', title: 'Support 24/7', desc: 'Tim customer service siap membantu Anda kapan saja' },
-                            { icon: 'bolt', title: 'Proses Cepat', desc: 'Deposit dan withdrawal dalam hitungan menit' },
-                            { icon: 'trending', title: 'Profit Optimal', desc: 'Strategi trading yang terbukti menguntungkan' }
+                            { icon: 'security', title: 'Keselamatan Dijamin', desc: 'Data dan dana anda dilindungi dengan penyulitan tahap bank' },
+                            { icon: 'phone', title: 'Sokongan 24/7', desc: 'Pasukan khidmat pelanggan sedia membantu anda pada bila-bila masa' },
+                            { icon: 'bolt', title: 'Proses Cepat', desc: 'Deposit dan pengeluaran dalam hitungan minit' },
+                            { icon: 'trending', title: 'Keuntungan Optimum', desc: 'Strategi perdagangan yang terbukti menguntungkan' }
                         ].map((feature, index) => (
                             <div key={index} className="rounded-lg border-l-4 border-blue-500 bg-blue-50 p-4">
                                 <div className="flex items-start gap-3">
-                                    <div className="mt-1 text-lg text-orange-500 md:text-2xl">
+                                    <div className="mt-1 text-lg text-blue-500 md:text-2xl">
                                         <MuiIcon name={feature.icon} fontSize="inherit" />
                                     </div>
                                     <div>
@@ -207,7 +213,7 @@ export default function PaketTrading() {
                         ))}
                     </div>
                 </Card>
-                {/* Proses Transaksi Paket */}
+                {/* Proses Transaksi Pakej */}
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
                     {paketList.map((paket, i) => {
                         const isOpen = openParagraf === paket.kode;
@@ -242,8 +248,8 @@ export default function PaketTrading() {
                                             <p className="text-blue-700">Modal</p>
                                             <p className="font-semibold">{paket.modal}</p>
                                         </div>
-                                        <div className="rounded-lg bg-orange-100 p-3 text-center">
-                                            <p className="text-orange-600">Profit / 2 Jam</p>
+                                        <div className="rounded-lg bg-blue-100 p-3 text-center">
+                                            <p className="text-blue-600">Profit / 2 Jam</p>
                                             <p className="text-lg font-semibold md:text-lg">{paket.profitPer2Jam}</p>
                                         </div>
                                     </div>

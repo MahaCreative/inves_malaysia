@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'PT Dherva Investindo'),
+    'name' => env('APP_NAME', 'Luno Malaysia'),
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'description' => env('APP_DESCRIPTION', 'PT Dherva Investindo - Platform investasi dan manajemen portofolio.'),
+    'description' => env('APP_DESCRIPTION', 'Luno Malaysia - Platform pelaburan dan pengurusan portfolio mata wang kripto.'),
 
     /*
     |--------------------------------------------------------------------------

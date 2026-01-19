@@ -40,7 +40,7 @@ export default function Layout({ children }) {
     const navItems = [
         { label: 'Home', href: `/${referal_code}/` },
         { label: 'Paket Trading', href: `/${referal_code}/paket-trading` },
-        { label: 'Legalitas', href: `/${referal_code}/legalitas` },
+
         {
             label: 'Tentang Kami',
             children: [
@@ -49,8 +49,10 @@ export default function Layout({ children }) {
                 { label: 'Dasar Prinsip', href: `/${referal_code}/dasar-prinsip` }
             ]
         },
-        { label: 'Pendaftaran', href: `/${referal_code}/pendaftaran-member` },
-        { label: 'ID Member', href: `/${referal_code}/member-area` },
+        { label: 'Pendaftaran', href: `/${referal_code}/pendaftaran-ahli` },
+        { label: 'ID Ahli', href: `/${referal_code}/ahli-area` },
+
+        { label: 'Privacy Policy', href: `/${referal_code}/privacy-policy` },
         auth.user ? { label: 'Dashboard', href: '/dashboard' } : { label: 'Login', href: '/login' }
     ];
 
@@ -61,7 +63,7 @@ export default function Layout({ children }) {
             {/* ================= BACKGROUND ================= */}
             <div className="fixed inset-0">
                 <div className="absolute inset-0 bg-[url('/image/blog-signup-background.jpg')] bg-cover bg-center opacity-15" />
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-950" />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950" />
             </div>
 
             <div className="relative z-10 flex min-h-screen flex-col">
@@ -70,11 +72,11 @@ export default function Layout({ children }) {
                     initial={{ y: -40, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.6, ease: 'easeOut' }}
-                    className="relative z-40 border-b border-white/10 bg-slate-900/80 shadow-xl backdrop-blur-xl"
+                    className="relative z-40 border-b border-white/10 bg-blue-900/80 shadow-xl backdrop-blur-xl"
                 >
                     <div className="max-w-8xl mx-auto px-4" ref={navRef}>
                         <div className="flex items-center justify-between py-4">
-                            <img src="/image/PT-DHERVA-INVESTINDO-14-1-20258.png" alt="Dherva Investindo" className="h-10 md:h-12" />
+                            <img src="/image/iwCmTrjcCzqEqGCgCGVr84H7oAY-removebg-preview.png" alt="Luno Malaysia" className="h-10 md:h-12" />
 
                             {/* STATUS */}
                             <motion.div
@@ -90,7 +92,7 @@ export default function Layout({ children }) {
                             {/* MOBILE BUTTON */}
                             <button
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                className="rounded-lg bg-slate-800 p-2 text-white transition-colors hover:bg-slate-700 md:hidden"
+                                className="rounded-lg bg-blue-800 p-2 text-white transition-colors hover:bg-blue-700 md:hidden"
                             >
                                 {isMenuOpen ? <CloseIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
                             </button>
@@ -187,30 +189,30 @@ export default function Layout({ children }) {
                 </main>
 
                 {/* ================= FOOTER ================= */}
-                <footer className="border-t border-white/10 bg-slate-900/80 backdrop-blur-xl">
+                <footer className="border-t border-white/10 bg-blue-900/80 backdrop-blur-xl">
                     <div className="mx-auto max-w-7xl px-4 py-14">
                         {/* PARTNERS */}
                         <div className="mb-14 grid grid-cols-2 gap-8 md:grid-cols-4">
                             {[
                                 {
-                                    img: '/image/Logo Kementerian Keuangan Indonesia (Kemenkeu) (PNG-240px) - FileVector69.png',
-                                    title: 'KEMENKEU',
-                                    desc: 'Kementerian Keuangan Republik Indonesia'
+                                    img: '/image/cropped-cropped-logo_kementerian-1-removebg-preview.png',
+                                    title: 'Kementerian Kewangan Malaysia',
+                                    desc: 'Kementerian Kewangan Malaysia'
                                 },
                                 {
-                                    img: '/image/PngItem_1528431.png',
-                                    title: 'LPS',
-                                    desc: 'Lembaga Penjamin Simpanan'
+                                    img: '/image/perbadanan_insurans_deposit_malaysia_logo.jfif',
+                                    title: 'PIPM',
+                                    desc: 'Perbadanan Insurans Deposit Malaysia (PIDM)'
                                 },
                                 {
-                                    img: '/image/unnamed-1084x542-696x348.png',
-                                    title: 'BAPPEBTI',
-                                    desc: 'Pengawas Perdagangan Berjangka Komoditi'
+                                    img: '/image/images-removebg-preview.png',
+                                    title: 'Seruhanjaya Sekuriti Malaysia',
+                                    desc: 'Securities Commission Malaysia'
                                 },
                                 {
-                                    img: '/image/LOGO PNG.png',
-                                    title: 'DHERVA',
-                                    desc: 'PT. Dherva Investindo',
+                                    img: '/image/iwCmTrjcCzqEqGCgCGVr84H7oAY-removebg-preview.png',
+                                    title: 'LUNO',
+                                    desc: 'Luno Malaysia Sdn Bhd',
                                     accent: true
                                 }
                             ].map((item, i) => (
@@ -222,7 +224,7 @@ export default function Layout({ children }) {
                                     whileHover={{ y: -6 }}
                                     transition={{ duration: 0.4 }}
                                     className={`rounded-2xl p-6 text-center shadow-xl ${
-                                        item.accent ? 'border border-amber-400/40 bg-slate-800/70' : 'border border-white/10 bg-white/5'
+                                        item.accent ? 'border border-amber-400/40 bg-blue-800/70' : 'border border-white/10 bg-white/5'
                                     }`}
                                 >
                                     {item.img && <img src={item.img} className="mx-auto mb-4 h-16" />}
@@ -235,12 +237,12 @@ export default function Layout({ children }) {
                         {/* INFO */}
                         <div className="grid grid-cols-1 gap-8 border-t border-white/10 pt-10 md:grid-cols-3">
                             <Info title="Tentang Kami">
-                                PT. Dherva Investindo adalah platform investasi terpercaya dengan sistem trading profesional.
+                                Luno Malaysia Sdn Bhd adalah platform pelaburan yang dipercayai dengan sistem perdagangan profesional.
                             </Info>
                             <Info title="Kontak">
                                 <MuiIcon name="phone" /> CS 24/7
                                 <br />
-                                📧 info@dherva.site
+                                📧 info@luno.site
                             </Info>
                             <Info title="Jam Operasional">
                                 Senin - Jumat: 09.00 - 11.45 WIB
@@ -250,7 +252,7 @@ export default function Layout({ children }) {
                         </div>
 
                         <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-gray-500">
-                            © 2025 PT. Dherva Investindo — Designed with 💙
+                            © 2025 Luno Malaysia Sdn Bhd — Direka dengan 💙
                         </div>
                     </div>
                 </footer>

@@ -6,101 +6,120 @@ export default function Office() {
     return (
         <>
             <Head>
-                <title>Office - PT Dherva Investindo</title>
+                <title>Pejabat dan Gambaran Syarikat - Luno Malaysia</title>
                 <meta
                     name="description"
-                    content="Alamat kantor dan kontak resmi PT Dherva Investindo. Virtual office di Indonesia dan headquarters di Singapore."
+                    content="Ketahui lebih lanjut tentang Luno Malaysia, Bursa Aset Digital (DAX) pertama yang dikawal selia di Malaysia. Kami menjadikan mata wang kripto seperti Bitcoin mudah dan selamat untuk semua."
                 />
-                <meta name="keywords" content="Dherva Investindo, kantor, alamat, kontak, investasi" />
+                <meta
+                    name="keywords"
+                    content="Luno Malaysia, mata wang kripto, Bitcoin, Ethereum, Bursa Aset Digital, DAX, Suruhanjaya Sekuriti Malaysia, pelaburan kripto"
+                />
                 <meta name="robots" content="index,follow" />
             </Head>
 
-            <div className="bg-slate-50 py-12">
-                <div className="mx-auto max-w-6xl px-4">
-                    <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-                        <div>
-                            <motion.h1
-                                initial={{ y: -10, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                className="mb-4 text-4xl font-extrabold text-emerald-800"
-                            >
-                                Kantor & Hubungi Kami
-                            </motion.h1>
-                            <motion.p
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 0.1 }}
-                                className="text-lg text-slate-700"
-                            >
-                                PT Dherva Investindo adalah Manajer Investasi independen. Izin Manajer Investasi: <strong>KEP-09/BL/MI/2015</strong>.
-                                Semua kebijakan investasi dijalankan tanpa konflik kepentingan.
-                            </motion.p>
+            <div className="bg-gradient-to-b from-white to-slate-50 py-12">
+                <div className="mx-auto max-w-5xl px-4">
+                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12 text-center">
+                        <h1 className="mb-4 text-4xl font-bold text-blue-700">Pejabat dan Gambaran Syarikat</h1>
+                        <p className="text-lg text-slate-600">Mengenai Luno Malaysia dan Komitmen Kami dalam Revolusi Kewangan Digital</p>
+                    </motion.div>
 
-                            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                                <div className="rounded-lg bg-gradient-to-br from-emerald-50 to-white p-5 shadow">
-                                    <h4 className="text-sm font-semibold text-emerald-600">Virtual Office (Indonesia)</h4>
-                                    <p className="mt-2 text-sm text-slate-700">
-                                        Batamindo Industrial Park, Jl. S. Parman No. Kav. 160, Sei Beduk, Batam
-                                    </p>
-                                </div>
-                                <div className="rounded-lg bg-gradient-to-br from-orange-50 to-white p-5 shadow">
-                                    <h4 className="text-sm font-semibold text-orange-600">Headquarters (Singapore)</h4>
-                                    <p className="mt-2 text-sm text-slate-700">Eu Tong Sen Street, #58-05/27 The Central Singapore - 593879</p>
-                                </div>
+                    <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:items-center">
+                        <motion.div initial={{ x: -10, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.1 }}>
+                            <img
+                                src="/image/pejabat_luno.jpg"
+                                alt="Pejabat Luno Malaysia"
+                                className="h-80 w-full rounded-xl object-cover shadow-lg"
+                            />
+                        </motion.div>
+
+                        <motion.div initial={{ x: 10, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="space-y-6">
+                            <div>
+                                <h2 className="mb-4 text-2xl font-semibold text-blue-700">Maklumat Pejabat</h2>
+                                <p className="text-slate-700">
+                                    Luno Malaysia Sdn Bhd beroperasi dari pejabat di Aras 16 & 17, Menara Nukleus, Mutiara Damansara, Petaling Jaya,
+                                    Selangor, Malaysia. Walaupun kami tidak menyediakan sokongan pakar di tapak, semua perkhidmatan pelanggan
+                                    dikendalikan secara digital untuk kemudahan anda.
+                                </p>
                             </div>
+                            <div>
+                                <h3 className="mb-2 text-lg font-medium text-slate-800">Hubungi Kami</h3>
+                                <p className="text-slate-600">
+                                    Untuk sebarang pertanyaan, sila lawati laman web rasmi kami atau hubungi sokongan pelanggan melalui saluran
+                                    digital.
+                                </p>
+                            </div>
+                        </motion.div>
+                    </div>
 
-                            <div className="mt-6 flex items-center gap-4">
-                                <a href="/image/OFFICE.png" target="_blank" rel="noreferrer" className="text-sm text-slate-600 hover:underline">
-                                    Lihat foto kantor
-                                </a>
+                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }} className="mb-12">
+                        <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-lg">
+                            <h3 className="mb-4 text-xl font-semibold text-blue-700">Lokasi Pejabat</h3>
+                            <div className="aspect-video w-full overflow-hidden rounded-lg">
+                                <iframe
+                                    width="100%"
+                                    height="100%"
+                                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAx7NwqSnIRQ9U22sZLd5rMIfWf5J4YmEk&amp;q=3.160611+101.6121892"
+                                    className="border-0"
+                                    allowFullScreen=""
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                ></iframe>
                             </div>
                         </div>
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3 }}
+                        className="rounded-xl border border-slate-200 bg-white p-8 shadow-lg"
+                    >
+                        <h2 className="mb-6 text-center text-3xl font-bold text-blue-700">Gambaran Syarikat</h2>
 
-                        <motion.div
-                            initial={{ scale: 0.98, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            className="flex items-center justify-center"
-                        >
-                            <img src="/image/OFFICE.png" alt="Office" className="w-full max-w-md rounded-lg object-cover shadow-lg" />
-                        </motion.div>
-                    </div>
-
-                    <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                        <motion.div whileHover={{ y: -6 }} className="rounded-xl bg-gradient-to-br from-emerald-50 to-white p-6 shadow">
-                            <h3 className="text-lg font-semibold text-emerald-700">Investasi</h3>
-                            <p className="mt-2 text-sm text-slate-600">
-                                Penanaman modal jangka panjang untuk memperoleh keuntungan melalui saham dan surat berharga lainnya.
+                        <div className="space-y-6 leading-relaxed text-slate-700">
+                            <p>
+                                Mata wang kripto sedang mengubah landskap kewangan global dengan pantas, dan pasukan Luno berada di barisan hadapan
+                                revolusi ini. Jika anda ingin terlibat dalam sesuatu yang benar-benar berskala global dan bersifat disruptif bersama
+                                pasukan yang berpandangan jauh serta bercita-cita tinggi, yang sangat menghargai kepelbagaian, kerjasama dan usaha
+                                berterusan ke arah kecemerlangan, maka inilah peluang untuk anda.
                             </p>
-                        </motion.div>
-                        <motion.div whileHover={{ y: -6 }} className="rounded-xl bg-gradient-to-br from-orange-50 to-white p-6 shadow">
-                            <h3 className="text-lg font-semibold text-orange-700">Pengelolaan Investasi</h3>
-                            <p className="mt-2 text-sm text-slate-600">
-                                Perumusan kebijakan, pengawasan, dan pelaksanaan investasi oleh tim profesional.
-                            </p>
-                        </motion.div>
-                        <motion.div whileHover={{ y: -6 }} className="rounded-xl bg-gradient-to-br from-emerald-50 to-white p-6 shadow">
-                            <h3 className="text-lg font-semibold text-emerald-600">Kebijakan</h3>
-                            <p className="mt-2 text-sm text-slate-600">Tidak memiliki kantor cabang; semua transaksi dikelola oleh kantor pusat.</p>
-                        </motion.div>
-                    </div>
 
-                    <div className="mt-10">
-                        <iframe
-                            scrolling="no"
-                            allowTransparency="true"
-                            frameBorder={0}
-                            src="https://www.tradingview-widget.com/embed-widget/ticker-tape/?locale=id#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22OANDA%3ASPX500USD%22%2C%22title%22%3A%22S%26P%20500%22%7D%2C%7B%22proName%22%3A%22OANDA%3ANAS100USD%22%2C%22title%22%3A%22Nasdaq%20100%22%7D%2C%7B%22proName%22%3A%22FX_IDC%3AEURUSD%22%2C%22title%22%3A%22EUR%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22BTC%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22ETH%2FUSD%22%7D%5D%2C%22colorTheme%22%3A%22light%22%2C%22isTransparent%22%3Afalse%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A78%2C%22utm_source%22%3A%22www.dhervainvestindo.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22ticker-tape%22%2C%22page-uri%22%3A%22www.dhervainvestindo.com%2Fp%2Foffice.html%22%7D"
-                            title="ticker tape TradingView widget"
-                            lang="en"
-                            style={{
-                                userSelect: 'none',
-                                boxSizing: 'border-box',
-                                display: 'block',
-                                height: 46,
-                                width: '100%'
-                            }}
-                        />
-                    </div>
+                            <p>
+                                Menaik taraf seluruh dunia kepada sistem kewangan baharu merupakan satu cabaran berskala besar. Seperti pendaratan
+                                pertama manusia di bulan, ia memerlukan individu istimewa yang mampu bekerjasama dengan kemahiran luar biasa, fokus
+                                yang tinggi dan keazaman yang kuat. Kami sedang mengubah dunia, dan untuk merealisasikannya, kami memerlukan pasukan
+                                terbaik bagi menjayakan misi ini. Ringkasnya, untuk mencapai matlamat kami, kami memerlukan individu yang luar biasa.
+                            </p>
+
+                            <p>
+                                Kami menjadikan proses membeli, menyimpan dan mempelajari mata wang kripto seperti Bitcoin, Ethereum, XRP dan Litecoin
+                                selamat serta mudah. Pada masa ini, kami mempunyai lebih daripada 5 juta pelanggan di lebih 40 buah negara.
+                            </p>
+
+                            <div className="rounded-lg border-l-4 border-blue-500 bg-blue-50 p-4">
+                                <p className="mb-2 font-semibold text-blue-800">Pembiayaan dan Pengiktirafan</p>
+                                <p>
+                                    Luno merupakan syarikat yang menerima pembiayaan Siri B, disokong oleh Balderton Capital dan Kumpulan Naspers,
+                                    serta telah diambil alih oleh Digital Currency Group (DCG) pada tahun 2020.
+                                </p>
+                            </div>
+
+                            <p>
+                                Kami juga merupakan Bursa Aset Digital (DAX) pertama yang dikawal selia dan diluluskan oleh Suruhanjaya Sekuriti
+                                Malaysia sejak Oktober 2019.
+                            </p>
+
+                            <div className="rounded-lg bg-slate-100 p-4">
+                                <p className="mb-2 font-semibold text-slate-800">Kepelbagaian Pasukan</p>
+                                <p>
+                                    Kami berbangga menjadi salah satu pasukan mata wang kripto paling antarabangsa di dunia, terdiri daripada lebih 26
+                                    kewarganegaraan, yang beroperasi merentasi Afrika Selatan, Indonesia, United Kingdom, Malaysia, Nigeria dan
+                                    Singapura.
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </>

@@ -39,7 +39,7 @@ export default function Pendaftaran({ whatsApp }) {
         nama_rekening: '',
         nomor_rekening: '',
         nama_bank: '',
-        modal_investasi: ''
+        modal_pelaburan: ''
     });
 
     /* ================= STATE ================= */
@@ -49,79 +49,98 @@ export default function Pendaftaran({ whatsApp }) {
     const [provinces, setProvinces] = useState([]);
     const [cities, setCities] = useState([]);
     const [loadingCity, setLoadingCity] = useState(false);
+    const [loadingProvince, setLoadingProvince] = useState(true);
     const [jobSearch, setJobSearch] = useState('');
 
     /* ================= DATA ================= */
     const pekerjaanList = [
-        'Pelajar / Mahasiswa',
-        'Karyawan Swasta',
-        'PNS',
+        'Pelajar',
+        'Pekerja Swasta',
+        'Pegawai Kerajaan',
         'BUMN',
         'Wiraswasta',
         'Pedagang',
         'Petani',
         'Nelayan',
         'Guru',
-        'Dosen',
-        'Dokter',
-        'Perawat',
+        'Pensyarah',
+        'Doktor',
+        'Jururawat',
         'Freelancer',
-        'Content Creator',
-        'Trader',
-        'Investor',
-        'Ibu Rumah Tangga',
-        'Pensiunan',
-        'Lainnya'
+        'Pencipta Kandungan',
+        'Penaja',
+        'Pelabur',
+        'Surirumah',
+        'Pencen',
+        'Lain-lain'
     ];
 
     const bankList = [
-        'Bank BRI',
-        'Bank BNI',
-        'Bank Mandiri',
-        'Bank BTN',
-        'Bank BCA',
-        'Bank CIMB Niaga',
-        'Bank Danamon',
-        'Bank Permata',
-        'Bank Panin',
-        'Bank OCBC NISP',
-        'Bank Mega',
-        'Bank Sinarmas',
-        'Bank Mayapada',
-        'Bank Artha Graha',
-        'Bank Bukopin',
-        'Bank BTPN',
-        'Bank Syariah Indonesia (BSI)',
-        'Bank Muamalat',
-        'Bank Mega Syariah',
-        'Bank Panin Dubai Syariah',
-        'Jenius (BTPN)',
-        'Blu by BCA',
-        'SeaBank',
-        'Bank Jago',
-        'Bank Neo Commerce',
-        'BPD / Bank Daerah',
-        'Bank Lainnya'
+        'Maybank',
+        'CIMB Bank',
+        'Public Bank',
+        'RHB Bank',
+        'Hong Leong Bank',
+        'AmBank',
+        'Bank Islam Malaysia',
+        'Bank Rakyat',
+        'Affin Bank',
+        'Alliance Bank',
+        'Bank Simpanan Nasional (BSN)',
+        'OCBC Bank',
+        'HSBC Bank',
+        'Standard Chartered',
+        'United Overseas Bank (UOB)',
+        'Bank Lain-lain'
     ];
 
     const filteredJobs = pekerjaanList.filter((job) => job.toLowerCase().includes(jobSearch.toLowerCase()));
 
-    /* ================= API PROVINSI ================= */
+    /* ================= API NEGERI ================= */
     useEffect(() => {
-        fetch('https://www.emsifa.com/api-wilayah-indonesia/api/provinces.json')
-            .then((res) => res.json())
-            .then(setProvinces);
+        fetch('https://countriesnow.space/api/v0.1/countries/states', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ country: 'Malaysia' })
+        })
+            .then((res) => {
+                if (!res.ok) throw new Error('Failed to fetch states');
+                return res.json();
+            })
+            .then((data) => {
+                if (data.data && data.data.states) {
+                    setProvinces(data.data.states.map((state, index) => ({ id: index + 1, name: state.name })));
+                }
+                setLoadingProvince(false);
+            })
+            .catch((error) => {
+                console.error('Error fetching states:', error);
+                setLoadingProvince(false);
+            });
     }, []);
 
-    /* ================= API KOTA ================= */
+    /* ================= API BANDAR ================= */
     useEffect(() => {
         if (!data.provinsi) return;
 
         setLoadingCity(true);
-        fetch(`https://www.emsifa.com/api-wilayah-indonesia/api/regencies/${data.provinsi}.json`)
-            .then((res) => res.json())
+        fetch('https://countriesnow.space/api/v0.1/countries/cities', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ country: 'Malaysia', state: data.provinsi })
+        })
             .then((res) => {
-                setCities(res);
+                if (!res.ok) throw new Error('Failed to fetch cities');
+                return res.json();
+            })
+            .then((data) => {
+                if (data.data) {
+                    setCities(data.data.map((city, index) => ({ id: index + 1, name: city })));
+                }
+                setLoadingCity(false);
+            })
+            .catch((error) => {
+                console.error('Error fetching cities:', error);
                 setLoadingCity(false);
             });
     }, [data.provinsi]);
@@ -140,27 +159,27 @@ export default function Pendaftaran({ whatsApp }) {
         e.preventDefault();
 
         // Buat pesan WhatsApp
-        const whatsappMessage = `Halo, saya ingin mendaftar sebagai member PT Dherva Investindo dengan data lengkap berikut:
+        const whatsappMessage = `Halo, saya ingin mendaftar sebagai ahli Luno Malaysia dengan data lengkap berikut:
 
-*DATA PRIBADI*
+*DATA PERIBADI*
 Nama: ${data.nama_member}
-Email: ${data.email}
+Emel: ${data.email}
 No WhatsApp: ${data.no_telp}
-Jenis Kelamin: ${data.jenis_kelamin}
-Modal Investasi: Rp.${onlyNumbers(data.modal_investasi)}
+Jantina: ${data.jenis_kelamin === 'L' ? 'Lelaki' : 'Perempuan'}
+Modal Pelaburan: RM.${onlyNumbers(data.modal_investasi)}
 
 *ALAMAT*
-Provinsi: ${data.provinsi}
-Kota: ${data.kota}
+Negeri: ${data.provinsi}
+Bandar: ${data.kota}
 Alamat Lengkap: ${data.alamat_lengkap}
+Poskod: ${data.kode_pos}
 
-
-*PEKERJAAN & DANA*
+*PEKERJAAN*
 Pekerjaan: ${data.pekerjaan}
 
-*REKENING BANK*
+*AKAUN BANK*
 Nama Pemilik: ${data.nama_rekening}
-Nomor Rekening: ${data.nomor_rekening}
+Nombor Akaun: ${data.nomor_rekening}
 Nama Bank: ${data.nama_bank}\
 `;
 
@@ -180,8 +199,8 @@ Nama Bank: ${data.nama_bank}\
             onSuccess: () => {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Berhasil 🎉',
-                    text: 'Pendaftaran member berhasil. Pesan telah dikirim ke WhatsApp admin. Silahkan menunggu konfirmasi dari admin untuk proses lebih lanjut',
+                    title: 'Berjaya 🎉',
+                    text: 'Pendaftaran ahli berjaya. Mesej telah dihantar ke WhatsApp admin. Sila tunggu pengesahan daripada admin untuk proses selanjutnya',
                     confirmButtonColor: '#2563eb'
                 });
                 const whatsappUrl = `https://wa.me/${adminPhoneForUrl}?text=${encodeURIComponent(whatsappMessage)}`;
@@ -217,32 +236,26 @@ Nama Bank: ${data.nama_bank}\
     return (
         <>
             <Head>
-                <title>Pendaftaran Member - PT Dherva Investindo</title>
+                <title>Pendaftaran - Luno Malaysia</title>
                 <meta
                     name="description"
-                    content="Form pendaftaran member PT Dherva Investindo. Isi data pribadi dan rekening untuk bergabung sebagai investor."
+                    content="Borang pendaftaran ahli Luno Malaysia. Isi data peribadi dan akaun untuk menyertai sebagai pelabur."
                 />
-                <meta name="keywords" content="pendaftaran member, pendaftaran investasi, dherva investindo" />
+                <meta name="keywords" content="pendaftaran ahli, pendaftaran pelaburan, luno malaysia" />
                 <meta name="robots" content="index,follow" />
-                <meta property="og:title" content="Pendaftaran Member - PT Dherva Investindo" />
-                <meta
-                    property="og:description"
-                    content="Daftar menjadi member PT Dherva Investindo. Isi formulir pendaftaran dan mulai investasi Anda."
-                />
+                <meta property="og:title" content="Pendaftaran - Luno Malaysia" />
+                <meta property="og:description" content="Daftar menjadi ahli Luno Malaysia. Isi borang pendaftaran dan mula pelaburan anda." />
                 <meta property="og:image" content="/image/LOGO PNG.png" />
                 <meta property="og:type" content="website" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Pendaftaran Member - PT Dherva Investindo" />
-                <meta
-                    name="twitter:description"
-                    content="Daftar menjadi member PT Dherva Investindo. Isi formulir pendaftaran dan mulai investasi Anda."
-                />
+                <meta name="twitter:title" content="Pendaftaran - Luno Malaysia" />
+                <meta name="twitter:description" content="Daftar menjadi ahli Luno Malaysia. Isi borang pendaftaran dan mula pelaburan anda." />
                 <meta name="twitter:image" content="/image/LOGO PNG.png" />
             </Head>
 
             <div className="flex min-h-screen justify-center bg-gray-50 py-12">
                 <div className="w-full max-w-4xl">
-                    <Card title="Pendaftaran Member" subtitle="Isi data secara bertahap" icon={<MuiIcon name="assignment" />}>
+                    <Card title="Pendaftaran Ahli" subtitle="Isi data secara berperingkat" icon={<MuiIcon name="assignment" />}>
                         {/* ================= STEPPER ================= */}
                         <div className="mb-10 flex justify-between">
                             {[1, 2, 3, 4].map((s) => (
@@ -263,19 +276,19 @@ Nama Bank: ${data.nama_bank}\
                                 {step === 1 && (
                                     <motion.section key="s1" {...stepAnim}>
                                         <h3 className="mb-4 flex items-center gap-2 border-b-2 border-blue-600 pb-2 text-lg font-semibold">
-                                            <MuiIcon name="person" /> Identitas
+                                            <MuiIcon name="person" /> Identiti
                                         </h3>
                                         <div className="grid gap-4 md:grid-cols-2">
                                             <Input
                                                 error={errors.nama_member}
-                                                label="Nama Lengkap"
+                                                label="Nama Penuh"
                                                 value={data.nama_member}
                                                 onChange={(e) => setData('nama_member', e.target.value)}
                                             />
 
                                             <Input
                                                 error={errors.email}
-                                                label="Email"
+                                                label="Emel"
                                                 type="email"
                                                 value={data.email}
                                                 onChange={(e) => setData('email', e.target.value)}
@@ -291,7 +304,7 @@ Nama Bank: ${data.nama_bank}\
                                             <Input
                                                 type="number"
                                                 error={errors.modal_investasi}
-                                                label="Modal Investasi"
+                                                label="Modal Pelaburan"
                                                 value={data.modal_investasi}
                                                 onChange={(e) => setData('modal_investasi', e.target.value)}
                                             />
@@ -306,9 +319,9 @@ Nama Bank: ${data.nama_bank}\
                                                 value={data.jenis_kelamin}
                                                 onChange={(e) => setData('jenis_kelamin', e.target.value)}
                                             >
-                                                <option value="">-- Jenis Kelamin --</option>
-                                                <option value="Laki-laki">Laki-laki</option>
-                                                <option value="Perempuan">Perempuan</option>
+                                                <option value="">-- Jantina --</option>
+                                                <option value="L">Lelaki</option>
+                                                <option value="P">Perempuan</option>
                                             </select>
                                             {errors.jenis_kelamin && <p className="mt-1 text-xs text-red-500">{errors.jenis_kelamin}</p>}
                                         </div>
@@ -335,9 +348,9 @@ Nama Bank: ${data.nama_bank}\
                                                         setData('kota', '');
                                                     }}
                                                 >
-                                                    <option value="">-- Provinsi --</option>
+                                                    <option value="">{loadingProvince ? 'Memuatkan...' : '-- Negeri --'}</option>
                                                     {provinces.map((p) => (
-                                                        <option key={p.id} value={p.id}>
+                                                        <option key={p.id} value={p.name}>
                                                             {p.name}
                                                         </option>
                                                     ))}
@@ -355,7 +368,7 @@ Nama Bank: ${data.nama_bank}\
                                                         value={data.kota}
                                                         onChange={(e) => setData('kota', e.target.value)}
                                                     >
-                                                        <option value="">{loadingCity ? 'Memuat...' : '-- Kota --'}</option>
+                                                        <option value="">{loadingCity ? 'Memuatkan...' : '-- Bandar --'}</option>
                                                         {cities.map((c) => (
                                                             <option key={c.id} value={c.name}>
                                                                 {c.name}
@@ -407,12 +420,12 @@ Nama Bank: ${data.nama_bank}\
                                 {/* ================= STEP 4 ================= */}
                                 {step === 3 && (
                                     <motion.section key="s4" {...stepAnim}>
-                                        <h3 className="mb-4 flex items-center gap-2 border-b-2 border-orange-500 pb-2 text-lg font-semibold">
-                                            <MuiIcon name="account_balance" /> Rekening
+                                        <h3 className="mb-4 flex items-center gap-2 border-b-2 border-blue-500 pb-2 text-lg font-semibold">
+                                            <MuiIcon name="account_balance" /> Akaun
                                         </h3>
 
                                         <Input
-                                            label="Nama Pemilik Rekening"
+                                            label="Nama Pemilik Akaun"
                                             error={errors.nama_rekening}
                                             value={data.nama_rekening}
                                             onChange={(e) => setData('nama_rekening', e.target.value)}
@@ -421,7 +434,7 @@ Nama Bank: ${data.nama_bank}\
                                             type="number"
                                             min="100000"
                                             error={errors.nomor_rekening}
-                                            label="Nomor Rekening"
+                                            label="Nombor Akaun"
                                             value={data.nomor_rekening}
                                             onChange={(e) => setData('nomor_rekening', e.target.value)}
                                         />
@@ -446,11 +459,11 @@ Nama Bank: ${data.nama_bank}\
 
                                 {/* ================= STEP 5 ================= */}
                                 {step === 4 && (
-                                    <motion.div key="s5" {...stepAnim} className="rounded-lg border-l-4 border-orange-500 bg-orange-50 p-6">
-                                        <h3 className="flex items-center gap-2 text-lg font-bold text-orange-700">
+                                    <motion.div key="s5" {...stepAnim} className="rounded-lg border-l-4 border-blue-500 bg-blue-50 p-6">
+                                        <h3 className="flex items-center gap-2 text-lg font-bold text-blue-700">
                                             <MuiIcon name="check_circle" /> Konfirmasi
                                         </h3>
-                                        <p className="text-sm text-orange-600">Pastikan seluruh data sudah benar sebelum dikirim.</p>
+                                        <p className="text-sm text-blue-600">Pastikan semua data sudah betul sebelum dihantar.</p>
                                     </motion.div>
                                 )}
                             </AnimatePresence>
@@ -465,11 +478,11 @@ Nama Bank: ${data.nama_bank}\
 
                                 {step < totalStep ? (
                                     <Button type="button" variant="primary" onClick={() => setStep(step + 1)}>
-                                        Lanjut
+                                        Seterusnya
                                     </Button>
                                 ) : (
                                     <Button type="submit" variant="primary" disabled={processing}>
-                                        {processing ? 'Memproses...' : 'Daftar Sekarang'}
+                                        {processing ? 'Memproses...' : 'Hantar'}
                                     </Button>
                                 )}
                             </div>

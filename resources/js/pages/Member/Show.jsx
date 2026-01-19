@@ -7,7 +7,7 @@ export default function Show({ member, whatsApp }) {
     const penarikanSaldo = () => {
         if (member.profit[member.profit.length - 1]?.total_profit > 0) {
             router.post(`/${referal_code}/penarikan-saldo/${member.id_member}`);
-            const whatsappMessage = `Halo, Admin saya ingin melakukan penarikan saldo, Harap untuk proses Penarikan Saldo saya segera di proses.`;
+            const whatsappMessage = `Halo, Admin saya ingin melakukan penarikan baki, Harap untuk proses Penarikan Baki saya segera di proses.`;
 
             // Nomor WhatsApp Admin (ubah sesuai nomor yang benar)
             let adminPhone = whatsApp.whatsapp;
@@ -22,7 +22,7 @@ export default function Show({ member, whatsApp }) {
             Swal.fire({
                 icon: 'error',
                 title: 'Gagal',
-                text: 'Anda belum memiliki saldo untuk ditarik',
+                text: 'Anda belum mempunyai baki untuk ditarik',
                 confirmButtonColor: '#2563eb'
             });
         }
@@ -30,17 +30,17 @@ export default function Show({ member, whatsApp }) {
     return (
         <>
             <Head>
-                <title>Detail Member - PT Dherva Investindo</title>
-                <meta name="description" content={`Data transaksi dan jadwal pencairan untuk member ${member.nama_member || ''}`} />
-                <meta name="keywords" content="member, detail member, pencairan profit, dherva investindo" />
+                <title>Butiran Ahli - Luno Malaysia</title>
+                <meta name="description" content={`Data transaksi dan jadual pencairan untuk ahli ${member.nama_member || ''}`} />
+                <meta name="keywords" content="ahli, butiran ahli, pencairan keuntungan, luno malaysia" />
                 <meta name="robots" content="noindex,nofollow" />
-                <meta property="og:title" content={`Detail Member - ${member.nama_member || ''} - PT Dherva Investindo`} />
-                <meta property="og:description" content={`Lihat jadwal pencairan dan riwayat transaksi untuk member ${member.nama_member || ''}.`} />
+                <meta property="og:title" content={`Butiran Ahli - ${member.nama_member || ''} - Luno Malaysia`} />
+                <meta property="og:description" content={`Lihat jadual pencairan dan sejarah transaksi untuk ahli ${member.nama_member || ''}.`} />
                 <meta property="og:image" content="/image/LOGO PNG.png" />
                 <meta property="og:type" content="website" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={`Detail Member - ${member.nama_member || ''} - PT Dherva Investindo`} />
-                <meta name="twitter:description" content={`Lihat jadwal pencairan dan riwayat transaksi untuk member ${member.nama_member || ''}.`} />
+                <meta name="twitter:title" content={`Butiran Ahli - ${member.nama_member || ''} - Luno Malaysia`} />
+                <meta name="twitter:description" content={`Lihat jadual pencairan dan sejarah transaksi untuk ahli ${member.nama_member || ''}.`} />
                 <meta name="twitter:image" content="/image/LOGO PNG.png" />
             </Head>
 
@@ -48,73 +48,75 @@ export default function Show({ member, whatsApp }) {
                 <table className="w-full">
                     <thead>
                         <tr>
-                            <th colSpan={2} className="w-full border-b bg-orange-500 text-center">
-                                PAKET {member.profit[member.profit.length - 1]?.kategori_paket} PROFIT{' '}
-                                {member.profit[member.profit.length - 1]?.profit_percentase}% PER 2 JAM
+                            <th colSpan={2} className="w-full border-b bg-blue-500 text-center">
+                                PAKEJ {member.profit[member.profit.length - 1]?.kategori_paket} KEUNTUNGAN{' '}
+                                {member.profit[member.profit.length - 1]?.profit_percentase}% SETIAP 2 JAM
                             </th>
                         </tr>
                         <tr>
                             <th colSpan={2} className="text-domine border px-3 py-2 font-domine text-[0.8rem] font-light tracking-tighter">
-                                PROSES TRANSAKSI PENCAIRAN PROFIT/KOMISI SECARA BERTAHAP MASA KONTRAK MAKSIMAL 6 JAM DAPAT DIPERPANJANG SETELAH
+                                PROSES TRANSAKSI PENCAIRAN KEUNTUNGAN/KOMISEN SECARA BERTAHAP MASA KONTRAK MAKSIMUM 6 JAM BOLEH DIPANJANGKAN SELEPAS
                                 KONTRAK BERAKHIR
                             </th>
                         </tr>
                         <tr className="border border-black">
-                            <th className="border bg-orange-600 py-2 font-oswald font-semibold text-white capitalize">
-                                Nomor Id Member : {member.id_member}
+                            <th className="border bg-blue-600 py-2 font-oswald font-semibold text-white capitalize">
+                                Nombor Id Ahli : {member.id_member}
                             </th>
-                            <th className="bg-orange-600 py-2 font-oswald font-semibold text-white capitalize">Nama Member: {member.nama_member}</th>
+                            <th className="bg-blue-600 py-2 font-oswald font-semibold text-white capitalize">Nama Ahli: {member.nama_member}</th>
                         </tr>
                         <tr>
                             <th className="border text-center font-oswald">
                                 <p className="px-4 font-domine text-[0.6rem] tracking-tighter md:text-xs">
-                                    PENCAIRAN MODAL TRADING PAKET {member.profit[member.profit.length - 1]?.kategori_paket} SYARAT & KETENTUAN BERLAKU
+                                    PENCAIRAN MODAL PERDAGANGAN PAKEJ {member.profit[member.profit.length - 1]?.kategori_paket} SYARAT & KETENTUAN
+                                    BERLAKU
                                 </p>
                                 <p className="mt-4 h-[70px] px-4 text-lg font-medium text-blue-600 md:text-xl lg:text-2xl">
-                                    MODAL TRADING IDR {formatRupiah(member.profit[member.profit.length - 1]?.modal_trading)}
+                                    MODAL PERDAGANGAN RM {formatRupiah(member.profit[member.profit.length - 1]?.modal_trading)}
                                 </p>
                                 <p className="px-4 font-domine tracking-tighter">
                                     Status :{' '}
                                     <span
                                         className={`font-bold ${member.profit[member.profit.length - 1]?.modal_trading > 0 ? 'text-green-500' : 'text-red-600'} `}
                                     >
-                                        {member.profit[member.profit.length - 1]?.modal_trading > 0 ? 'Open' : 'Close'}
+                                        {member.profit[member.profit.length - 1]?.modal_trading > 0 ? 'Terbuka' : 'Tutup'}
                                     </span>
                                 </p>
                                 <p className="h-[40px] py-1 font-oswald text-xs font-bold tracking-tighter text-white md:text-xl"></p>
                             </th>
                             <th className="border text-center font-oswald">
                                 <p className="px-4 font-domine text-[0.6rem] tracking-tighter md:text-xs">
-                                    PENCAIRAN MODAL TRADING PAKET {member.profit[member.profit.length - 1]?.kategori_paket} SYARAT & KETENTUAN BERLAKU
+                                    PENCAIRAN MODAL PERDAGANGAN PAKEJ {member.profit[member.profit.length - 1]?.kategori_paket} SYARAT & KETENTUAN
+                                    BERLAKU
                                 </p>
                                 <p className="mt-4 h-[70px] px-4 text-lg font-medium text-blue-600 md:text-xl lg:text-2xl">
-                                    PROFIT {member.profit[member.profit.length - 1]?.profit_percentase}% PER 2JAM
+                                    KEUNTUNGAN {member.profit[member.profit.length - 1]?.profit_percentase}% SETIAP 2JAM
                                 </p>
                                 <p className="px-4 font-domine tracking-tighter">
                                     Status :{' '}
                                     <span
                                         className={`font-bold ${member.profit[member.profit.length - 1]?.modal_trading > 0 ? 'text-blue-500' : 'text-red-600'} `}
                                     >
-                                        {member.profit[member.profit.length - 1]?.modal_trading > 0 ? 'On Proses' : 'Close'}
+                                        {member.profit[member.profit.length - 1]?.modal_trading > 0 ? 'Sedang Diproses' : 'Tutup'}
                                     </span>
                                 </p>
                                 <p className="flex h-[40px] items-center justify-center bg-black py-1 font-oswald text-base font-bold tracking-tighter text-white md:text-xl">
-                                    Saldo : {formatRupiah(member.profit[member.profit.length - 1]?.total_profit || 0)}
+                                    Baki : {formatRupiah(member.profit[member.profit.length - 1]?.total_profit || 0)}
                                 </p>
                             </th>
                         </tr>
                         <tr className="">
                             <th className="w-1/2 border px-4 py-6 text-center font-domine">
-                                <p className="mb-6 font-domine text-lg tracking-tighter text-orange-600 underline">PERHATIAN</p>
+                                <p className="mb-6 font-domine text-lg tracking-tighter text-blue-600 underline">PERHATIAN</p>
                                 <p className="h-[130px] text-[0.8rem] font-normal md:text-base">
-                                    Pencairan paket <span className="font-bold">B</span> & <span className="font-bold">C</span> sesuai jadwal
+                                    Pencairan pakej <span className="font-bold">B</span> & <span className="font-bold">C</span> mengikut jadual
                                 </p>
                             </th>
                             <th className="w-1/2 border px-4 py-6 text-center font-domine">
-                                <p className="mb-6 font-domine tracking-tighter text-orange-600 underline lg:text-lg">PERHATIAN</p>
+                                <p className="mb-6 font-domine tracking-tighter text-blue-600 underline lg:text-lg">PERHATIAN</p>
                                 <p className="h-[130px] text-[0.8rem] font-normal md:text-base">
-                                    Saldo profit dan modal akhir kontrak akan termonitor secara otomatis sesuai jadwal, Setelah saldo sudah termonitor
-                                    segera lakukan penarikan untuk menghindari error sistem,
+                                    Baki keuntungan dan modal akhir kontrak akan dipantau secara automatik mengikut jadual, Selepas baki sudah
+                                    dipantau segera lakukan penarikan untuk mengelakkan ralat sistem,
                                 </p>
                             </th>
                         </tr>
@@ -123,7 +125,7 @@ export default function Show({ member, whatsApp }) {
                                 <p className="mb-6 font-domine text-lg tracking-tighter underline">Keterangan Transaksi</p>
                             </th>
                             <th className="flex w-1/2 w-full flex-col items-center justify-center border px-4 py-6 text-center font-domine">
-                                <p className="mb-6 inline bg-orange-200 font-domine text-sm tracking-tighter underline lg:text-lg">PENARIKAN SALDO</p>
+                                <p className="mb-6 inline bg-blue-200 font-domine text-sm tracking-tighter underline lg:text-lg">PENARIKAN BAKI</p>
                                 <button className="hover:cursor-pointer" onClick={() => penarikanSaldo()}>
                                     <img
                                         className="h-[59px]"
@@ -137,28 +139,30 @@ export default function Show({ member, whatsApp }) {
                 </table>
 
                 <h1 className="py-3 pt-6 font-oswald text-xl font-bold text-gray-800">
-                    JADWAL PENCAIRAN PROFIT DAN MODAL PAKET {member.profit[member.profit.length - 1]?.kategori_paket}
+                    JADUAL PENCAIRAN KEUNTUNGAN DAN MODAL PAKEJ {member.profit[member.profit.length - 1]?.kategori_paket}
                 </h1>
                 <div className="w-full overflow-x-auto rounded-lg shadow-md">
                     <table className="w-full border-collapse">
                         <thead>
                             <tr className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
                                 <th className="border-b-2 border-blue-800 px-4 py-4 text-left text-xs font-semibold tracking-wide">
-                                    JUMLAH MODAL TRADING
+                                    JUMLAH MODAL PERDAGANGAN
                                 </th>
                                 <th className="border-b-2 border-blue-800 px-4 py-4 text-center text-xs font-semibold tracking-wide">
                                     MODAL MASUK JAM
                                 </th>
                                 <th className="border-b-2 border-blue-800 px-4 py-4 text-center text-xs font-semibold tracking-wide">
-                                    PROFIT 20% TAHAP I
+                                    KEUNTUNGAN 20% TAHAP I
                                 </th>
                                 <th className="border-b-2 border-blue-800 px-4 py-4 text-center text-xs font-semibold tracking-wide">
-                                    PROFIT 20% TAHAP II
+                                    KEUNTUNGAN 20% TAHAP II
                                 </th>
                                 <th className="border-b-2 border-blue-800 px-4 py-4 text-center text-xs font-semibold tracking-wide">
                                     PENCAIRAN AKHIR
                                 </th>
-                                <th className="border-b-2 border-blue-800 px-4 py-4 text-center text-xs font-semibold tracking-wide">TOTAL PROFIT</th>
+                                <th className="border-b-2 border-blue-800 px-4 py-4 text-center text-xs font-semibold tracking-wide">
+                                    JUMLAH KEUNTUNGAN
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -179,7 +183,7 @@ export default function Show({ member, whatsApp }) {
                                             className="border border-gray-300 bg-blue-100 transition-colors hover:bg-blue-200"
                                         >
                                             <td className={`border-r border-gray-300 px-4 py-4 text-sm font-semibold text-gray-800`}>
-                                                {item.modal_trading ? formatRupiah(item.modal_trading) : 'Rp. 0'}
+                                                {item.modal_trading ? formatRupiah(item.modal_trading) : 'RM 0'}
                                             </td>
                                             <td className={`border-r border-gray-300 px-4 py-4 text-center text-sm text-gray-700`}>
                                                 {item.modal_trading_masuk_jam ? item.modal_trading_masuk_jam + ' WIB' : '-'}
