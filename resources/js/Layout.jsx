@@ -3,9 +3,11 @@ import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 import MuiIcon from './components/MuiIcon';
 import data from './pages/data';
-
 export default function Layout({ children }) {
     const { auth, referal_code } = usePage().props;
     const ref = useRef(null);
@@ -57,6 +59,27 @@ export default function Layout({ children }) {
     ];
 
     const [openDropdown, setOpenDropdown] = useState(null);
+
+    const affiliates = [
+        '/image/logo_sidc.jpg',
+        '/image/logo_cm2.jpg',
+        '/image/logo_cmc.jpg',
+        '/image/logo_ppa.jpg',
+        '/image/logo_bix.jpg',
+        '/image/icmr.png',
+        '/image/sdrec.jpg',
+        '/image/logo_sidc.jpg',
+        '/image/logo_cm2.jpg'
+    ];
+
+    const related = [
+        '/image/cropped-cropped-logo_kementerian-1-removebg-preview.png',
+        '/image/iosco-hub-2025.jpg',
+        '/image/bursaLogo-2024.png',
+        '/image/logo_bnm.jpg',
+        '/image/cropped-cropped-logo_kementerian-1-removebg-preview.png',
+        '/image/iosco-hub-2025.jpg'
+    ];
 
     return (
         <div className="relative min-h-screen w-full overflow-hidden bg-slate-950">
@@ -187,7 +210,30 @@ export default function Layout({ children }) {
                         {children}
                     </motion.div>
                 </main>
-
+                {/* slider */}
+                <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 py-6 md:flex-row">
+                    <div className="w-full md:w-1/2">
+                        <h1 className="my-5 font-bold text-white">SC AFFILIATES</h1>
+                        <Slider dots={false} infinite={true} speed={500} slidesToShow={3} slidesToScroll={3} autoplay={true} arrows={false}>
+                            {affiliates.map((src, i) => (
+                                <div key={i}>
+                                    <img src={src} alt="" className="mx-3 mx-auto h-[150px] w-full bg-white object-contain" />
+                                </div>
+                            ))}
+                        </Slider>
+                    </div>
+                    <div className="w-full md:w-1/2">
+                        <h1 className="my-5 font-bold text-white">RELATED SITES</h1>
+                        <Slider dots={false} infinite={true} speed={500} slidesToShow={3} slidesToScroll={3} autoplay={true} arrows={false}>
+                            {related.map((src, i) => (
+                                <div key={i}>
+                                    <img src={src} alt="" className="mx-3 mx-auto h-[150px] w-full bg-white object-contain" />
+                                </div>
+                            ))}
+                        </Slider>
+                    </div>
+                </div>
+                {/* end slider */}
                 {/* ================= FOOTER ================= */}
                 <footer className="border-t border-white/10 bg-blue-900/80 backdrop-blur-xl">
                     <div className="mx-auto max-w-7xl px-4 py-14">
