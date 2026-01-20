@@ -37,7 +37,7 @@ export default function Home() {
                         Platform pelaburan yang dipercayai dengan keuntungan yang kompetitif dan sistem keselamatan tahap bank
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
-                        <Link href={`${referal_code}/pendaftaran-member`}>
+                        <Link href={`${referal_code}/pendaftaran-ahli`}>
                             <Button variant="primary" size="lg">
                                 <MuiIcon name="rocket" className="mr-2 inline-block" /> Daftar Sekarang
                             </Button>
@@ -370,7 +370,7 @@ export default function Home() {
                     <p className="mb-6 font-domine text-xs md:text-base">
                         Sertailah bersama ribuan pelabur berjaya dan raih keuntungan konsisten bersama kami
                     </p>
-                    <Link href={`${referal_code}/pendaftaran-member`}>
+                    <Link href={`${referal_code}/pendaftaran-ahli`}>
                         <Button variant="secondary" size="lg" className="bg-white hover:bg-blue-500">
                             💎 Daftar Sekarang - Percuma
                         </Button>
