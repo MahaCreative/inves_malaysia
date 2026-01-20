@@ -101,7 +101,21 @@ export default function Show({ member, whatsApp }) {
                                     </span>
                                 </p>
                                 <p className="flex h-[40px] items-center justify-center bg-black py-1 font-oswald text-base font-bold tracking-tighter text-white md:text-xl">
-                                    Baki : {formatRupiah(member.profit[member.profit.length - 1]?.total_profit || 0)}
+                                    Baki :{' '}
+                                    {(() => {
+                                        const item = member.profit[member.profit.length - 1];
+                                        let sum = 0;
+                                        if (item?.profit_tahap_pertama !== null && !isNaN(parseFloat(item.profit_tahap_pertama))) {
+                                            sum += parseFloat(item.profit_tahap_pertama);
+                                        }
+                                        if (item?.profit_tahap_kedua !== null && !isNaN(parseFloat(item.profit_tahap_kedua))) {
+                                            sum += parseFloat(item.profit_tahap_kedua);
+                                        }
+                                        if (item?.profit_akhir !== null && !isNaN(parseFloat(item.profit_akhir))) {
+                                            sum += parseFloat(item.profit_akhir);
+                                        }
+                                        return formatRupiah(sum);
+                                    })()}
                                 </p>
                             </th>
                         </tr>

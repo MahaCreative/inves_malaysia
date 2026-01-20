@@ -42,7 +42,7 @@ Route::prefix('{referal_code}')->where(['referal_code' => '[a-zA-Z0-9\-]+'])->gr
     Route::get('/', [HomeController::class, 'home'])->name('home');
     Route::get('paket-trading', [PaketTradingController::class, 'index'])->name('paket-trading');
     Route::get('/ahli-area', [MemberController::class, 'index'])->name('member');
-    Route::post('/get-member-area', [MemberController::class, 'search'])->name('search-member');
+    Route::post('/get-ahli-area', [MemberController::class, 'search'])->name('search-member');
     Route::post('penarikan-saldo/{id_member}', [MemberController::class, 'penarikan_saldo'])->name('penarikan_saldo');
     Route::get('/ahli-area/{id_member}', [MemberController::class, 'show'])->name('show-member');
     Route::get('pendaftaran-ahli', [PendaftaranController::class, 'index'])->name('pendaftaran');

@@ -17,20 +17,20 @@ export default function PaketTrading() {
             title: 'PAKEJ A',
             subtitle: 'Tahap Permulaan Perdagangan',
             gradient: 'bg-blue-700',
-            modal: 'RM500.000 – RM5.000.000',
+            modal: 'RM500 – RM5.000',
             profitPer2Jam: '15%',
             totalProfit: '45%',
-            contohModal: 'RM500.000',
-            contohProfit: 'RM75.000',
-            totalKeuntungan: 'RM225.000',
-            akhirKontrak: 'RM575.000',
+            contohModal: 'RM5.000',
+            contohProfit: 'RM750',
+            totalKeuntungan: 'RM2.250',
+            akhirKontrak: 'RM5.750',
             rincian: ['Pengeluaran keuntungan pertama 15%', 'Pengeluaran keuntungan kedua 15%', 'Pengeluaran keuntungan ketiga 15% + Modal Anda'],
             paragraf: (
                 <>
-                    Contoh jika modal perdagangan <strong>PAKEJ A</strong> RM500.000, proses pengeluaran keuntungannya iaitu 2 jam kemudian
-                    mendapatkan keuntungan 15% (RM75.000) dan 2 jam berikutnya mendapatkan lagi keuntungan 15% (RM75.000) dan 2 jam lagi berikutnya
-                    kontrak anda berakhir dan di akhir kontrak modal dan keuntungan yang ketiga dikeluarkan bersamaan iaitu RM575.000. Jadi jumlah
-                    keuntungan selama 6 jam atau selama masa kontrak dengan modal RM500.000 adalah RM225.000.
+                    Contoh jika modal perdagangan <strong>PAKEJ A</strong> RM5.000, proses pengeluaran keuntungannya iaitu 2 jam kemudian mendapatkan
+                    keuntungan 15% (RM750) dan 2 jam berikutnya mendapatkan lagi keuntungan 15% (RM750) dan 2 jam lagi berikutnya kontrak anda
+                    berakhir dan di akhir kontrak modal dan keuntungan yang ketiga dikeluarkan bersamaan iaitu RM5.750. Jadi jumlah keuntungan selama
+                    6 jam atau selama masa kontrak dengan modal RM5.000 adalah RM2.250.
                 </>
             )
         },
@@ -39,20 +39,20 @@ export default function PaketTrading() {
             title: 'PAKEJ B',
             subtitle: 'Profesional Perdagangan',
             gradient: 'bg-blue-600',
-            modal: 'RM5.000.000 – RM50.000.000',
+            modal: 'RM5.000 – RM20.000',
             profitPer2Jam: '20%',
             totalProfit: '60%',
-            contohModal: 'RM5.000.000',
-            contohProfit: 'RM1.000.000',
-            totalKeuntungan: 'RM3.000.000',
-            akhirKontrak: 'RM6.000.000',
+            contohModal: 'RM5.000',
+            contohProfit: 'RM1.000',
+            totalKeuntungan: 'RM3.000',
+            akhirKontrak: 'RM6.000',
             rincian: ['Pengeluaran keuntungan pertama 20%', 'Pengeluaran keuntungan kedua 20%', 'Pengeluaran keuntungan ketiga 20% + Modal Anda'],
             paragraf: (
                 <>
-                    Contoh jika modal perdagangan <strong>PAKEJ B</strong> RM5.000.000, proses pengeluaran keuntungannya iaitu 2 jam kemudian
-                    mendapatkan keuntungan 20% (RM1.000.000) dan 2 jam berikutnya mendapatkan lagi keuntungan 20% (RM1.000.000) dan 2 jam lagi
-                    berikutnya kontrak anda berakhir dan di akhir kontrak modal dan keuntungan yang ketiga dikeluarkan bersamaan iaitu RM6.000.000.
-                    Jadi jumlah keuntungan selama 6 jam atau selama masa kontrak dengan modal RM5.000.000 adalah RM3.000.000.
+                    Contoh jika modal perdagangan <strong>PAKEJ B</strong> RM5.000, proses pengeluaran keuntungannya iaitu 2 jam kemudian mendapatkan
+                    keuntungan 20% (RM1.000) dan 2 jam berikutnya mendapatkan lagi keuntungan 20% (RM1.000) dan 2 jam lagi berikutnya kontrak anda
+                    berakhir dan di akhir kontrak modal dan keuntungan yang ketiga dikeluarkan bersamaan iaitu RM6.000. Jadi jumlah keuntungan selama
+                    6 jam atau selama masa kontrak dengan modal RM5.000 adalah RM3.000.
                 </>
             )
         },
@@ -61,20 +61,20 @@ export default function PaketTrading() {
             title: 'PAKEJ C',
             subtitle: 'Premium Perdagangan',
             gradient: 'bg-blue-600',
-            modal: 'RM50.000.000 – RM500.000.000',
+            modal: 'RM21.000 – RM50.000',
             profitPer2Jam: '25%',
             totalProfit: '75%',
-            contohModal: 'RM50.000.000',
-            contohProfit: 'RM12.500.000',
-            totalKeuntungan: 'RM37.500.000',
-            akhirKontrak: 'RM87.500.000',
+            contohModal: 'RM50.000',
+            contohProfit: 'RM12.500',
+            totalKeuntungan: 'RM37.500',
+            akhirKontrak: 'RM62.500',
             rincian: ['Pengeluaran keuntungan pertama 25%', 'Pengeluaran keuntungan kedua 25%', 'Pengeluaran keuntungan ketiga 25% + Modal Anda'],
             paragraf: (
                 <>
-                    Contoh jika modal perdagangan <strong>PAKEJ C</strong> RM50.000.000, proses pengeluaran keuntungannya iaitu 2 jam kemudian
-                    mendapatkan keuntungan 25% (RM12.500.000) dan 2 jam berikutnya mendapatkan lagi keuntungan 25% (RM12.500.000) dan 2 jam lagi
-                    berikutnya kontrak anda berakhir dan di akhir kontrak modal dan keuntungan yang ketiga dikeluarkan bersamaan iaitu RM87.500.000.
-                    Jadi jumlah keuntungan selama 6 jam atau selama masa kontrak dengan modal RM50.000.000 adalah RM37.500.000.
+                    Contoh jika modal perdagangan <strong>PAKEJ D</strong> RM50.000, proses pengeluaran keuntungannya iaitu 2 jam kemudian mendapatkan
+                    keuntungan 25% (RM12.500) dan 2 jam berikutnya mendapatkan lagi keuntungan 25% (RM12.500) dan 2 jam lagi berikutnya kontrak anda
+                    berakhir dan di akhir kontrak modal dan keuntungan yang ketiga dikeluarkan bersamaan iaitu RM62.500. Jadi jumlah keuntungan selama
+                    6 jam atau selama masa kontrak dengan modal RM50.000 adalah RM37.500.
                 </>
             )
         },
@@ -83,20 +83,20 @@ export default function PaketTrading() {
             title: 'PAKEJ D',
             subtitle: 'Eksklusif Perdagangan',
             gradient: 'bg-blue-700',
-            modal: 'RM500.000.000 – Unlimited',
+            modal: 'RM50.000 – Unlimited',
             profitPer2Jam: '30%',
             totalProfit: '90%',
-            contohModal: 'RM500.000.000',
-            contohProfit: 'RM150.000.000',
-            totalKeuntungan: 'RM450.000.000',
-            akhirKontrak: 'RM950.000.000',
+            contohModal: 'RM50.000',
+            contohProfit: 'RM15.000',
+            totalKeuntungan: 'RM450.000',
+            akhirKontrak: 'RM65.000',
             rincian: ['Pengeluaran keuntungan pertama 30%', 'Pengeluaran keuntungan kedua 30%', 'Pengeluaran keuntungan ketiga 30% + Modal Anda'],
             paragraf: (
                 <>
-                    Contoh jika modal perdagangan <strong>PAKEJ D</strong> RM500.000.000, proses pengeluaran keuntungannya iaitu 2 jam kemudian
-                    mendapatkan keuntungan 30% (RM150.000.000) dan 2 jam berikutnya mendapatkan lagi keuntungan 30% (RM150.000.000) dan 2 jam lagi
-                    berikutnya kontrak anda berakhir dan di akhir kontrak modal dan keuntungan yang ketiga dikeluarkan bersamaan iaitu RM950.000.000.
-                    Jadi jumlah keuntungan selama 6 jam atau selama masa kontrak dengan modal RM500.000.000 adalah RM450.000.000.
+                    Contoh jika modal perdagangan <strong>PAKEJ D</strong> RM50.000, proses pengeluaran keuntungannya iaitu 2 jam kemudian mendapatkan
+                    keuntungan 30% (RM15.000) dan 2 jam berikutnya mendapatkan lagi keuntungan 30% (RM15.000) dan 2 jam lagi berikutnya kontrak anda
+                    berakhir dan di akhir kontrak modal dan keuntungan yang ketiga dikeluarkan bersamaan iaitu RM65.000. Jadi jumlah keuntungan selama
+                    6 jam atau selama masa kontrak dengan modal RM50.000 adalah RM45.000.
                 </>
             )
         }

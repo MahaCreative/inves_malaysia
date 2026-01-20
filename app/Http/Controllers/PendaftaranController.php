@@ -37,7 +37,7 @@ class PendaftaranController extends Controller
             'nama_member'      => 'required|string|max:255',
             'email'            => 'required|email',
             'no_telp'          => 'required|numeric|min_digits:11',
-            'modal_investasi' => 'required|numeric|min_digits:5',
+            'modal_investasi' => 'required|numeric|min_digits:2',
             'jenis_kelamin'    => 'required',
             'provinsi'         => 'nullable|string|max:100',
             'kota'             => 'nullable|string|max:100',

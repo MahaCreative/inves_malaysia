@@ -99,7 +99,7 @@ index.head = (args: { referal_code: string | number } | [referal_code: string | 
 /**
 * @see \App\Http\Controllers\MemberController::search
  * @see app/Http/Controllers/MemberController.php:17
- * @route '/{referal_code}/get-member-area'
+ * @route '/{referal_code}/get-ahli-area'
  */
 export const search = (args: { referal_code: string | number } | [referal_code: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: search.url(args, options),
@@ -108,13 +108,13 @@ export const search = (args: { referal_code: string | number } | [referal_code: 
 
 search.definition = {
     methods: ["post"],
-    url: '/{referal_code}/get-member-area',
+    url: '/{referal_code}/get-ahli-area',
 } satisfies RouteDefinition<["post"]>
 
 /**
 * @see \App\Http\Controllers\MemberController::search
  * @see app/Http/Controllers/MemberController.php:17
- * @route '/{referal_code}/get-member-area'
+ * @route '/{referal_code}/get-ahli-area'
  */
 search.url = (args: { referal_code: string | number } | [referal_code: string | number ] | string | number, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -142,7 +142,7 @@ search.url = (args: { referal_code: string | number } | [referal_code: string | 
 /**
 * @see \App\Http\Controllers\MemberController::search
  * @see app/Http/Controllers/MemberController.php:17
- * @route '/{referal_code}/get-member-area'
+ * @route '/{referal_code}/get-ahli-area'
  */
 search.post = (args: { referal_code: string | number } | [referal_code: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: search.url(args, options),
@@ -152,7 +152,7 @@ search.post = (args: { referal_code: string | number } | [referal_code: string |
     /**
 * @see \App\Http\Controllers\MemberController::search
  * @see app/Http/Controllers/MemberController.php:17
- * @route '/{referal_code}/get-member-area'
+ * @route '/{referal_code}/get-ahli-area'
  */
     const searchForm = (args: { referal_code: string | number } | [referal_code: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: search.url(args, options),
@@ -162,7 +162,7 @@ search.post = (args: { referal_code: string | number } | [referal_code: string |
             /**
 * @see \App\Http\Controllers\MemberController::search
  * @see app/Http/Controllers/MemberController.php:17
- * @route '/{referal_code}/get-member-area'
+ * @route '/{referal_code}/get-ahli-area'
  */
         searchForm.post = (args: { referal_code: string | number } | [referal_code: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: search.url(args, options),
