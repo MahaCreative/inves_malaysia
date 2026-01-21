@@ -249,26 +249,6 @@ Nama Bank: ${data.nama_bank}\
                                     </div>
 
                                     <div>
-                                        <label className="mb-1 block text-sm font-medium text-gray-700">Pilih Paket Trading</label>
-                                        <div className="space-y-2">
-                                            {paketList.map((paket) => (
-                                                <label key={paket.kode} className="flex items-center space-x-2">
-                                                    <input
-                                                        type="radio"
-                                                        name="paket_trading"
-                                                        value={paket.kode}
-                                                        checked={data.paket_trading === paket.kode}
-                                                        onChange={(e) => setData('paket_trading', e.target.value)}
-                                                        className="text-blue-600 focus:ring-blue-500"
-                                                    />
-                                                    <span className="text-sm">{paket.title} - {paket.modal}</span>
-                                                </label>
-                                            ))}
-                                        </div>
-                                        {errors.paket_trading && <p className="mt-1 text-xs text-red-500">{errors.paket_trading}</p>}
-                                    </div>
-
-                                    <div>
                                         <label className="mb-1 block text-sm font-medium text-gray-700">Jantina</label>
                                         <select
                                             className={`w-full rounded-lg border-2 px-4 py-2.5 text-sm transition-all ${
@@ -297,6 +277,27 @@ Nama Bank: ${data.nama_bank}\
                                             ))}
                                         </select>
                                         {errors.pekerjaan && <p className="mt-1 text-xs text-red-500">{errors.pekerjaan}</p>}
+                                    </div>
+                                    <div className="col-span-2 w-full">
+                                        <label className="mb-1 block text-sm font-medium text-gray-700">Pilih Paket Trading</label>
+                                        <div className="grid space-y-2 md:grid-cols-2">
+                                            {paketList.map((paket) => (
+                                                <label key={paket.kode} className="flex items-center space-x-2">
+                                                    <input
+                                                        type="radio"
+                                                        name="paket_trading"
+                                                        value={paket.kode}
+                                                        checked={data.paket_trading === paket.kode}
+                                                        onChange={(e) => setData('paket_trading', e.target.value)}
+                                                        className="text-blue-600 focus:ring-blue-500"
+                                                    />
+                                                    <span className="text-sm">
+                                                        {paket.title} - {paket.modal}
+                                                    </span>
+                                                </label>
+                                            ))}
+                                        </div>
+                                        {errors.paket_trading && <p className="mt-1 text-xs text-red-500">{errors.paket_trading}</p>}
                                     </div>
                                 </div>
                                 <div>
