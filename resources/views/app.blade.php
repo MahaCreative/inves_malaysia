@@ -13,17 +13,19 @@
     <link rel="canonical" href="{{ $page['props']['seo']['canonical'] ?? url()->current() }}">
 
     {{-- Open Graph / Facebook --}}
-    <meta property="og:title" content="{{ $page['props']['seo']['title'] ?? config('app.name') }}" />
+    <meta property="og:title" content="{{ $page['props']['seo']['title'] ?? 'Luno' }}" />
     <meta property="og:description" content="{{ $page['props']['seo']['description'] ?? config('app.description', '') }}" />
-    <meta property="og:image" content="{{ $page['props']['seo']['image'] ?? asset('image/LOGO PNG.png') }}" />
+    <meta property="og:image"
+        content="{{ $page['props']['seo']['image'] ?? 'https://framerusercontent.com/images/cjRb5SvO4mNBEEI1MlFlwYBoJEg.png' }}" />
+
     <meta property="og:type" content="{{ $page['props']['seo']['type'] ?? 'website' }}" />
     <meta property="og:url" content="{{ $page['props']['seo']['canonical'] ?? url()->current() }}" />
 
     {{-- Twitter Card --}}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{ $page['props']['seo']['title'] ?? config('app.name') }}" />
+    <meta name="twitter:title" content="{{ $page['props']['seo']['title'] ?? 'Luno' }}" />
     <meta name="twitter:description" content="{{ $page['props']['seo']['description'] ?? config('app.description', '') }}" />
-    <meta name="twitter:image" content="{{ $page['props']['seo']['image'] ?? asset('image/LOGO PNG.png') }}" />
+    <meta name="twitter:image" content="{{ $page['props']['seo']['image'] ?? 'https://framerusercontent.com/images/cjRb5SvO4mNBEEI1MlFlwYBoJEg.png' }}" />
 
     <link rel="icon" href="https://framerusercontent.com/images/cjRb5SvO4mNBEEI1MlFlwYBoJEg.png" sizes="any">
 

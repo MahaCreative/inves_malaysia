@@ -13,6 +13,29 @@ const selectStyle =
 /* ================= HELPER ================= */
 const onlyNumbers = (value) => value.replace(/[^0-9]/g, '');
 
+const paketList = [
+    {
+        kode: 'A',
+        title: 'PAKEJ A',
+        modal: 'RM 500 – RM 5.000'
+    },
+    {
+        kode: 'B',
+        title: 'PAKEJ B',
+        modal: 'RM 5.000 – RM 20.000'
+    },
+    {
+        kode: 'C',
+        title: 'PAKEJ C',
+        modal: 'RM21.000 – RM50.000'
+    },
+    {
+        kode: 'D',
+        title: 'PAKEJ D',
+        modal: 'RM50.000 – Unlimited'
+    }
+];
+
 export default function Pendaftaran({ whatsApp }) {
     const { referal_code } = usePage().props;
     const { data, setData, post, reset, errors, processing } = useForm({
@@ -22,6 +45,7 @@ export default function Pendaftaran({ whatsApp }) {
         jenis_kelamin: '',
         alamat_lengkap: '',
         modal_investasi: '',
+        paket_trading: '',
         pekerjaan: '',
         nama_rekening: '', // Nama pada akaun
         nomor_rekening: '', // Nomor akaun
@@ -80,10 +104,11 @@ export default function Pendaftaran({ whatsApp }) {
 *DATA PERIBADI*
 Nama: ${data.nama_member}
 Emel: ${data.email}
-No WhatsApp: ${data.no_telp}
+No WhatsApp: +60${data.no_telp}
 Jantina: ${data.jenis_kelamin === 'L' ? 'Lelaki' : 'Perempuan'}
 Alamat Lengkap: ${data.alamat_lengkap}
 Modal Pelaburan: RM.${onlyNumbers(data.modal_investasi)}
+Paket Trading: ${data.paket_trading}
 
 *PEKERJAAN*
 Pekerjaan: ${data.pekerjaan}
@@ -185,22 +210,63 @@ Nama Bank: ${data.nama_bank}\
                                         onChange={(e) => setData('email', e.target.value)}
                                     />
 
-                                    <Input
-                                        type="number"
-                                        min="10000000000"
-                                        error={errors.no_telp}
-                                        label="No WhatsApp"
-                                        value={data.no_telp}
-                                        onChange={(e) => setData('no_telp', e.target.value)}
-                                    />
+                                    <div>
+                                        <label className="mb-1 block text-sm font-medium text-gray-700">No WhatsApp</label>
+                                        <div className="relative">
+                                            <span className="absolute top-1/2 left-3 -translate-y-1/2 transform text-gray-500">🇲🇾 +60</span>
+                                            <input
+                                                type="number"
+                                                className={`w-full rounded-lg border-2 px-4 py-2.5 pl-16 text-sm transition-all focus:ring-2 ${
+                                                    errors.no_telp
+                                                        ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
+                                                        : 'border-gray-200 focus:border-blue-600 focus:ring-blue-200'
+                                                }`}
+                                                value={data.no_telp}
+                                                onChange={(e) => setData('no_telp', onlyNumbers(e.target.value))}
+                                                placeholder="123456789"
+                                            />
+                                        </div>
+                                        {errors.no_telp && <p className="mt-1 text-xs text-red-500">{errors.no_telp}</p>}
+                                    </div>
 
-                                    <Input
-                                        type="number"
-                                        error={errors.modal_investasi}
-                                        label="Modal Pelaburan"
-                                        value={data.modal_investasi}
-                                        onChange={(e) => setData('modal_investasi', e.target.value)}
-                                    />
+                                    <div>
+                                        <label className="mb-1 block text-sm font-medium text-gray-700">Modal Pelaburan</label>
+                                        <div className="relative">
+                                            <span className="absolute top-1/2 left-3 -translate-y-1/2 transform text-gray-500">RM</span>
+                                            <input
+                                                type="number"
+                                                className={`w-full rounded-lg border-2 px-4 py-2.5 pl-10 text-sm transition-all focus:ring-2 ${
+                                                    errors.modal_investasi
+                                                        ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
+                                                        : 'border-gray-200 focus:border-blue-600 focus:ring-blue-200'
+                                                }`}
+                                                value={data.modal_investasi}
+                                                onChange={(e) => setData('modal_investasi', onlyNumbers(e.target.value))}
+                                                placeholder="0"
+                                            />
+                                        </div>
+                                        {errors.modal_investasi && <p className="mt-1 text-xs text-red-500">{errors.modal_investasi}</p>}
+                                    </div>
+
+                                    <div>
+                                        <label className="mb-1 block text-sm font-medium text-gray-700">Pilih Paket Trading</label>
+                                        <div className="space-y-2">
+                                            {paketList.map((paket) => (
+                                                <label key={paket.kode} className="flex items-center space-x-2">
+                                                    <input
+                                                        type="radio"
+                                                        name="paket_trading"
+                                                        value={paket.kode}
+                                                        checked={data.paket_trading === paket.kode}
+                                                        onChange={(e) => setData('paket_trading', e.target.value)}
+                                                        className="text-blue-600 focus:ring-blue-500"
+                                                    />
+                                                    <span className="text-sm">{paket.title} - {paket.modal}</span>
+                                                </label>
+                                            ))}
+                                        </div>
+                                        {errors.paket_trading && <p className="mt-1 text-xs text-red-500">{errors.paket_trading}</p>}
+                                    </div>
 
                                     <div>
                                         <label className="mb-1 block text-sm font-medium text-gray-700">Jantina</label>
@@ -242,7 +308,7 @@ Nama Bank: ${data.nama_bank}\
                                     />
                                 </div>
                                 <div className="my-2">
-                                    <h3 className="mb-4 border-b border-blue-500 text-lg font-semibold text-gray-800">INFORMASI AKUN BANK</h3>
+                                    <h3 className="mb-4 border-b border-blue-500 text-lg font-semibold text-gray-800">Maklumat Akaun Bank</h3>
                                     <Input
                                         label="Nama Pemilik Akaun"
                                         error={errors.nama_rekening}
