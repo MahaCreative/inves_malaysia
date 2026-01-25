@@ -40,16 +40,14 @@ export default function Pendaftaran({ whatsApp }) {
     const { referal_code } = usePage().props;
     const { data, setData, post, reset, errors, processing } = useForm({
         nama_member: '', // NAMA LENGKAP (MALAYSIA)
+        ic_number: '', // Num Ic
         email: '', // E-MEL
-        no_telp: '', // no whatsapp
-        jenis_kelamin: '',
-        alamat_lengkap: '',
-        modal_investasi: '',
-        paket_trading: '',
+        no_telp: '', // no telefon
         pekerjaan: '',
         nama_rekening: '', // Nama pada akaun
-        nomor_rekening: '', // Nomor akaun
-        nama_bank: ''
+        nomor_rekening: '', // Num akaun
+        nama_bank: '',
+        alamat_lengkap: '' // Alamat
     });
 
     /* ================= DATA ================= */
@@ -103,20 +101,16 @@ export default function Pendaftaran({ whatsApp }) {
 
 *DATA PERIBADI*
 Nama: ${data.nama_member}
-Emel: ${data.email}
-No WhatsApp: +60${data.no_telp}
-Jantina: ${data.jenis_kelamin === 'L' ? 'Lelaki' : 'Perempuan'}
-Alamat Lengkap: ${data.alamat_lengkap}
-Modal Pelaburan: RM.${onlyNumbers(data.modal_investasi)}
-Paket Trading: ${data.paket_trading}
-
-*PEKERJAAN*
+Num Ic: ${data.ic_number}
+E-mail: ${data.email}
+No. Telefon: +60${data.no_telp}
 Pekerjaan: ${data.pekerjaan}
+Alamat: ${data.alamat_lengkap}
 
 *AKAUN BANK*
-Nama Pemilik: ${data.nama_rekening}
-Nombor Akaun: ${data.nomor_rekening}
-Nama Bank: ${data.nama_bank}\
+Nama pada akaun: ${data.nama_rekening}
+Num akaun: ${data.nomor_rekening}
+Nama Bank: ${data.nama_bank}
 `;
 
         // Nomor WhatsApp Admin (ubah sesuai nomor yang benar)
@@ -197,21 +191,28 @@ Nama Bank: ${data.nama_bank}\
                                 <div className="grid gap-4 md:grid-cols-2">
                                     <Input
                                         error={errors.nama_member}
-                                        label="Nama Penuh"
+                                        label="Nama"
                                         value={data.nama_member}
                                         onChange={(e) => setData('nama_member', e.target.value)}
                                     />
 
                                     <Input
+                                        error={errors.ic_number}
+                                        label="Num Ic"
+                                        value={data.ic_number}
+                                        onChange={(e) => setData('ic_number', e.target.value)}
+                                    />
+
+                                    <Input
                                         error={errors.email}
-                                        label="Emel"
+                                        label="E-mail"
                                         type="email"
                                         value={data.email}
                                         onChange={(e) => setData('email', e.target.value)}
                                     />
 
                                     <div>
-                                        <label className="mb-1 block text-sm font-medium text-gray-700">No WhatsApp</label>
+                                        <label className="mb-1 block text-sm font-medium text-gray-700">No. Telefon</label>
                                         <div className="relative">
                                             <span className="absolute top-1/2 left-3 -translate-y-1/2 transform text-gray-500">🇲🇾 +60</span>
                                             <input
@@ -230,43 +231,6 @@ Nama Bank: ${data.nama_bank}\
                                     </div>
 
                                     <div>
-                                        <label className="mb-1 block text-sm font-medium text-gray-700">Modal Pelaburan</label>
-                                        <div className="relative">
-                                            <span className="absolute top-1/2 left-3 -translate-y-1/2 transform text-gray-500">RM</span>
-                                            <input
-                                                type="number"
-                                                className={`w-full rounded-lg border-2 px-4 py-2.5 pl-10 text-sm transition-all focus:ring-2 ${
-                                                    errors.modal_investasi
-                                                        ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
-                                                        : 'border-gray-200 focus:border-blue-600 focus:ring-blue-200'
-                                                }`}
-                                                value={data.modal_investasi}
-                                                onChange={(e) => setData('modal_investasi', onlyNumbers(e.target.value))}
-                                                placeholder="0"
-                                            />
-                                        </div>
-                                        {errors.modal_investasi && <p className="mt-1 text-xs text-red-500">{errors.modal_investasi}</p>}
-                                    </div>
-
-                                    <div>
-                                        <label className="mb-1 block text-sm font-medium text-gray-700">Jantina</label>
-                                        <select
-                                            className={`w-full rounded-lg border-2 px-4 py-2.5 text-sm transition-all ${
-                                                errors.jenis_kelamin
-                                                    ? 'border-red-500 focus:border-red-500 focus:ring-red-200'
-                                                    : 'border-gray-200 focus:border-blue-600 focus:ring-blue-200'
-                                            }`}
-                                            value={data.jenis_kelamin}
-                                            onChange={(e) => setData('jenis_kelamin', e.target.value)}
-                                        >
-                                            <option value="">-- Pilih Jantina --</option>
-                                            <option value="L">Lelaki</option>
-                                            <option value="P">Perempuan</option>
-                                        </select>
-                                        {errors.jenis_kelamin && <p className="mt-1 text-xs text-red-500">{errors.jenis_kelamin}</p>}
-                                    </div>
-
-                                    <div>
                                         <label className="mb-1 block text-sm font-medium text-gray-700">Pekerjaan</label>
                                         <select className={selectStyle} value={data.pekerjaan} onChange={(e) => setData('pekerjaan', e.target.value)}>
                                             <option value="">-- Pilih Pekerjaan --</option>
@@ -278,41 +242,10 @@ Nama Bank: ${data.nama_bank}\
                                         </select>
                                         {errors.pekerjaan && <p className="mt-1 text-xs text-red-500">{errors.pekerjaan}</p>}
                                     </div>
-                                    <div className="col-span-2 w-full">
-                                        <label className="mb-1 block text-sm font-medium text-gray-700">Pilih Paket Trading</label>
-                                        <div className="grid space-y-2 md:grid-cols-2">
-                                            {paketList.map((paket) => (
-                                                <label key={paket.kode} className="flex items-center space-x-2">
-                                                    <input
-                                                        type="radio"
-                                                        name="paket_trading"
-                                                        value={paket.kode}
-                                                        checked={data.paket_trading === paket.kode}
-                                                        onChange={(e) => setData('paket_trading', e.target.value)}
-                                                        className="text-blue-600 focus:ring-blue-500"
-                                                    />
-                                                    <span className="text-sm">
-                                                        {paket.title} - {paket.modal}
-                                                    </span>
-                                                </label>
-                                            ))}
-                                        </div>
-                                        {errors.paket_trading && <p className="mt-1 text-xs text-red-500">{errors.paket_trading}</p>}
-                                    </div>
-                                </div>
-                                <div>
+
                                     <Input
-                                        error={errors.alamat_lengkap}
-                                        label="Alamat Lengkap"
-                                        value={data.alamat_lengkap}
-                                        onChange={(e) => setData('alamat_lengkap', e.target.value)}
-                                    />
-                                </div>
-                                <div className="my-2">
-                                    <h3 className="mb-4 border-b border-blue-500 text-lg font-semibold text-gray-800">Maklumat Akaun Bank</h3>
-                                    <Input
-                                        label="Nama Pemilik Akaun"
                                         error={errors.nama_rekening}
+                                        label="Nama pada akaun"
                                         value={data.nama_rekening}
                                         onChange={(e) => setData('nama_rekening', e.target.value)}
                                     />
@@ -321,12 +254,12 @@ Nama Bank: ${data.nama_bank}\
                                         type="number"
                                         min="100000"
                                         error={errors.nomor_rekening}
-                                        label="Nombor Akaun"
+                                        label="Num akaun"
                                         value={data.nomor_rekening}
                                         onChange={(e) => setData('nomor_rekening', e.target.value)}
                                     />
 
-                                    <div className="md:col-span-2">
+                                    <div>
                                         <label className="mb-1 block text-sm font-medium text-gray-700">Nama Bank</label>
                                         <select className={selectStyle} value={data.nama_bank} onChange={(e) => setData('nama_bank', e.target.value)}>
                                             <option value="">-- Pilih Nama Bank --</option>
@@ -337,6 +270,15 @@ Nama Bank: ${data.nama_bank}\
                                             ))}
                                         </select>
                                         {errors.nama_bank && <p className="mt-1 text-xs text-red-500">{errors.nama_bank}</p>}
+                                    </div>
+
+                                    <div className="col-span-2">
+                                        <Input
+                                            error={errors.alamat_lengkap}
+                                            label="Alamat"
+                                            value={data.alamat_lengkap}
+                                            onChange={(e) => setData('alamat_lengkap', e.target.value)}
+                                        />
                                     </div>
                                 </div>
                             </div>
