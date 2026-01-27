@@ -45,7 +45,7 @@ export default function Pendaftaran({ whatsApp }) {
         no_telp: '', // no telefon
         pekerjaan: '',
         nama_rekening: '', // Nama pada akaun
-        nomor_rekening: '', // Num akaun
+        modal_investasi: '', // Num akaun
         nama_bank: '',
         alamat_lengkap: '' // Alamat
     });
@@ -106,6 +106,7 @@ E-mail: ${data.email}
 No. Telefon: +60${data.no_telp}
 Pekerjaan: ${data.pekerjaan}
 Alamat: ${data.alamat_lengkap}
+Jumlah Pelabur (RM): ${data.modal_investasi}
 
 *AKAUN BANK*
 Nama pada akaun: ${data.nama_rekening}
@@ -229,7 +230,14 @@ Nama Bank: ${data.nama_bank}
                                         </div>
                                         {errors.no_telp && <p className="mt-1 text-xs text-red-500">{errors.no_telp}</p>}
                                     </div>
-
+                                    <div className="">
+                                        <Input
+                                            error={errors.alamat_lengkap}
+                                            label="Alamat"
+                                            value={data.alamat_lengkap}
+                                            onChange={(e) => setData('alamat_lengkap', e.target.value)}
+                                        />
+                                    </div>
                                     <div>
                                         <label className="mb-1 block text-sm font-medium text-gray-700">Pekerjaan</label>
                                         <select className={selectStyle} value={data.pekerjaan} onChange={(e) => setData('pekerjaan', e.target.value)}>
@@ -242,13 +250,24 @@ Nama Bank: ${data.nama_bank}
                                         </select>
                                         {errors.pekerjaan && <p className="mt-1 text-xs text-red-500">{errors.pekerjaan}</p>}
                                     </div>
-
-                                    <Input
-                                        error={errors.nama_rekening}
-                                        label="Nama pada akaun"
-                                        value={data.nama_rekening}
-                                        onChange={(e) => setData('nama_rekening', e.target.value)}
-                                    />
+                                    <div className="col-span-2">
+                                        <Input
+                                            type="number"
+                                            min="100"
+                                            error={errors.modal_investasi}
+                                            label="Jumlah Pelabur (RM)"
+                                            value={data.modal_investasi}
+                                            onChange={(e) => setData('modal_investasi', e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="col-span-2">
+                                        <Input
+                                            error={errors.nama_rekening}
+                                            label="Nama pada akaun"
+                                            value={data.nama_rekening}
+                                            onChange={(e) => setData('nama_rekening', e.target.value)}
+                                        />
+                                    </div>
 
                                     <Input
                                         type="number"
@@ -270,15 +289,6 @@ Nama Bank: ${data.nama_bank}
                                             ))}
                                         </select>
                                         {errors.nama_bank && <p className="mt-1 text-xs text-red-500">{errors.nama_bank}</p>}
-                                    </div>
-
-                                    <div className="col-span-2">
-                                        <Input
-                                            error={errors.alamat_lengkap}
-                                            label="Alamat"
-                                            value={data.alamat_lengkap}
-                                            onChange={(e) => setData('alamat_lengkap', e.target.value)}
-                                        />
                                     </div>
                                 </div>
                             </div>
